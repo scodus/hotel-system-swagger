@@ -407,9 +407,14 @@
 											"type": "text"
 										},
 										{
-											"key": "feature_image",
+											"key": "images[]",
 											"type": "file",
-											"src": "/home/user--49/Downloads/IMG_8325.jpg"
+											"src": "/home/user--49/Pictures/Screenshots/Screenshot from 2023-08-01 11-58-21.png"
+										},
+										{
+											"key": "images[]",
+											"type": "file",
+											"src": "/home/user--49/Pictures/Screenshots/Screenshot from 2023-07-27 15-19-56.png"
 										}
 									]
 								},
@@ -539,9 +544,9 @@
 											"type": "text"
 										},
 										{
-											"key": "feature_image",
+											"key": "images[]",
 											"type": "file",
-											"src": "/home/user--49/Pictures/Screenshots/Screenshot from 2023-07-21 09-22-09.png"
+											"src": "/home/user--49/Downloads/IMG_8326.jpg"
 										}
 									]
 								},
@@ -1599,12 +1604,12 @@
 							]
 						},
 						"url": {
-							"raw": "{{url}}/api/login",
+							"raw": "{{url}}/admin/login",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"api",
+								"admin",
 								"login"
 							]
 						}
@@ -1642,18 +1647,18 @@
 							"formdata": [
 								{
 									"key": "refresh_token",
-									"value": "def502002f4c8d14faa245f1c8b12f00afa31c896a91633ed0e860bfad2d14769ec89ae4df35bcfa830dd1709c948075a8016761921ba6fd2bd63ebf58ebbe52f596ab00ff75cde1f9ab60a6343e46c673ac7c029d1063544b4dd6ba319849373e82d68bbacf0fbb32f7d296ebd84f01398bc3f0e0a77106688cc293eb8af739cd491bcf07570a4b13ec41c7a9cac55308bca6d0cfe5e14bc5f14b576c3a2193520e4a028b80074887c2ff957d2a58ae846c4c4ec48f1d2e4ff1329be964bee0ba47d5d466188661257e8fd8a20ebba52f6ef1ec599cc9e3449c01d3bf895d9c0d078e7f5124c52816011549ab405a88cb8671b93e264830c95fe4a343edd99a30c3ad9293303cb37c34158361d3093256c1d2cc7b45c3c0b41e71924476403ccb57c101ba1cf8d93d4fe2704f5e081c3d138b3dd29702bdb5b17c391f9fa9f681da4879dde371770e3481e4776defe086d79390306626f294ed7e0f4bd3cf260965b68cac8aa41a51bada25e42e0cbf291c40242ed03b1fc952ec18d78de9e3f4905141c3fe62",
+									"value": "def502002f4c8d14faa245f1c8b12f00afa31c896a91633ed0e860bfad2d14769ec89ae4df35bcfa830dd1709c948075a8016761921ba6fd2bd63ebf58ebbe52f596ab00ff75cde1f9ab60a6343e46c673ac7c029d1063544b4dd6ba319849373e82d68bbacf0fbb32f7d296ebd84f01398bc3f0e0a77106688cc293eb8af739cd491bcf07570a4b13ec41c7a9cac55308bca6d0cfe5e14bc5f14b576c3a2193520e4a028b80074887c2ff957d2a58ae846c4c4ec48f1d2e4ff1329be964bee0ba47d5d466188661257e8fd8a20ebba52f6ef1ec599cc9e3449c01d3bf895d9c0d078e7f5124c52816011549ab405a88cb8671b93e264830c95fe4a343edd99a30c3ad9293303cb37c34158361d309325c1d2cc7b45c3c0b41e71924476403ccb57c101ba1cf8d93d4fe2704f5e081c3d138b3dd29702bdb5b17c391f9fa9f681da4879dde371770e3481e4776defe086d79390306626f294ed7e0f4bd3cf260965b68cac8aa41a51bada25e42e0cbf291c40242ed03b1fc952ec18d78de9e3f4905141c3fe62",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{url}}/api/refresh-token",
+							"raw": "{{url}}/admin/refresh-token",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"api",
+								"admin",
 								"refresh-token"
 							]
 						}
@@ -1696,12 +1701,12 @@
 							]
 						},
 						"url": {
-							"raw": "{{url}}/api/register",
+							"raw": "{{url}}/admin/register",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"api",
+								"admin",
 								"register"
 							]
 						}
@@ -1728,12 +1733,12 @@
 							"formdata": []
 						},
 						"url": {
-							"raw": "{{url}}/api/logout",
+							"raw": "{{url}}/admin/logout",
 							"host": [
 								"{{url}}"
 							],
 							"path": [
-								"api",
+								"admin",
 								"logout"
 							]
 						}
