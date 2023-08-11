@@ -39,6 +39,8 @@ tags:
   - name: admin > roster-task
   - name: admin > roster-time
   - name: admin > banner
+  - name: admin > offer
+  - name: site  setting
 paths:
   /admin/register:
     post:
@@ -738,7 +740,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '25'
+          example: '29'
       responses:
         '200':
           description: Successful response
@@ -2149,7 +2151,7 @@ paths:
   /admin/roster-time:
     post:
       tags:
-        - admin > banner
+        - admin > roster-time
       summary: store
       requestBody:
         content:
@@ -2178,7 +2180,7 @@ paths:
             application/json: {}
     get:
       tags:
-        - admin > banner
+        - admin > roster-time
       summary: list
       security:
         - bearerAuth: []
@@ -2208,7 +2210,7 @@ paths:
   /admin/roster-time/{id}:
     post:
       tags:
-        - admin > banner
+        - admin > roster-time
       summary: update
       requestBody:
         content:
@@ -2241,7 +2243,7 @@ paths:
             application/json: {}
     delete:
       tags:
-        - admin > banner
+        - admin > roster-time
       summary: delete
       security:
         - bearerAuth: []
@@ -2285,7 +2287,122 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /admin/banner:
+    post:
+      tags:
+        - admin > banner
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                text:
+                  type: string
+                  example: banner1
+                image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > banner
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /admin/banner/{id}:
+    post:
+      tags:
+        - admin > banner
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                text:
+                  type: string
+                  example: banner 1 up
+                image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - admin > banner
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '3'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
     get:
       tags:
         - admin > banner
@@ -2303,7 +2420,177 @@ paths:
           schema:
             type: integer
           required: true
+          example: '4'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/offer:
+    post:
+      tags:
+        - admin > offer
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: offer1
+                image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > offer
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
           example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/offer/{id}:
+    post:
+      tags:
+        - admin > offer
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                title:
+                  type: string
+                  example: offer 1 up
+                image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '3'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - admin > offer
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '3'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > offer
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '3'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/site-setting/welcome-message-section:
+    post:
+      tags:
+        - site  setting
+      summary: welcome message section
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                welcome_message_headperson_name:
+                  type: string
+                  example: offer 1 up
+                welcome_message_headperson_designation:
+                  type: string
+                welcome_message_description:
+                  type: string
+                welcome_message_headperson_signature:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: Successful response

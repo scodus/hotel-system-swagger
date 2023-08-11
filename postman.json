@@ -1064,7 +1064,7 @@
 										},
 										{
 											"key": "room_id[]",
-											"value": "17",
+											"value": "19",
 											"type": "text"
 										},
 										{
@@ -1399,7 +1399,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "25"
+											"value": "29"
 										}
 									]
 								}
@@ -4349,26 +4349,25 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "title",
-											"value": "13:00:00",
+											"key": "text",
+											"value": "banner1",
 											"type": "text"
 										},
 										{
-											"key": "status",
-											"value": "active",
-											"type": "text",
-											"disabled": true
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/Compressed/test-images/@ nepaL AT un.png"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{url}}/admin/roster-time",
+									"raw": "{{url}}/admin/banner",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
-										"roster-time"
+										"banner"
 									]
 								}
 							},
@@ -4398,26 +4397,25 @@
 											"type": "text"
 										},
 										{
-											"key": "title",
-											"value": "7",
+											"key": "text",
+											"value": "banner 1 up",
 											"type": "text"
 										},
 										{
-											"key": "status",
-											"value": "inactive",
-											"type": "text",
-											"disabled": true
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/Compressed/test-images/8801fbbf0175e2a6323cf0540c6a27c4.jpg"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{url}}/admin/roster-time/:id",
+									"raw": "{{url}}/admin/banner/:id",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
-										"roster-time",
+										"banner",
 										":id"
 									],
 									"variable": [
@@ -4456,19 +4454,19 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{url}}/admin/roster-time/:id",
+									"raw": "{{url}}/admin/banner/:id",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
-										"roster-time",
+										"banner",
 										":id"
 									],
 									"variable": [
 										{
 											"key": "id",
-											"value": "1"
+											"value": "3"
 										}
 									]
 								}
@@ -4503,13 +4501,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/admin/roster-time?paginate=1&page=&limit=&search_keyword=",
+									"raw": "{{url}}/admin/banner?paginate=1&page=&limit=&search_keyword=",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
-										"roster-time"
+										"banner"
 									],
 									"query": [
 										{
@@ -4574,7 +4572,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "1"
+											"value": "4"
 										}
 									]
 								}
@@ -4582,6 +4580,331 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "offer",
+					"item": [
+						{
+							"name": "store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "offer1",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/QRDown.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/offer",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"offer"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "offer 1 up",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/Compressed/test-images/8801fbbf0175e2a6323cf0540c6a27c4.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/offer/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"offer",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/offer/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"offer",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/offer?paginate=1&page=&limit=&search_keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"offer"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/offer/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"offer",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "site  setting",
+			"item": [
+				{
+					"name": "welcome message section",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "patch",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "welcome_message_headperson_name",
+									"value": "offer 1 up",
+									"type": "text"
+								},
+								{
+									"key": "welcome_message_headperson_designation",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "welcome_message_description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "welcome_message_headperson_signature",
+									"type": "file",
+									"src": "/C:/Users/August/Downloads/QRDown.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/admin/site-setting/welcome-message-section",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"admin",
+								"site-setting",
+								"welcome-message-section"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
