@@ -625,19 +625,13 @@
 									}
 								],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "title[]",
-											"value": "10s",
-											"type": "text"
-										},
-										{
-											"key": "title[]",
-											"value": "2s",
-											"type": "text"
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": [\r\n        \"10s\",\r\n        \"2s\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": {
 									"raw": "{{url}}/admin/room/store-multiple",
@@ -1213,7 +1207,7 @@
 										},
 										{
 											"key": "room_id[]",
-											"value": "14",
+											"value": "15",
 											"type": "text"
 										},
 										{
@@ -1231,7 +1225,7 @@
 										{
 											"key": "images[]",
 											"type": "file",
-											"src": "/C:/Users/August/Downloads/Compressed/test-images/2.png"
+											"src": "/C:/Users/August/Downloads/QRDown.png"
 										}
 									]
 								},
@@ -1248,7 +1242,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "25"
+											"value": "9"
 										}
 									]
 								}
@@ -4840,71 +4834,1053 @@
 							"response": []
 						}
 					]
-				}
-			]
-		},
-		{
-			"name": "site  setting",
-			"item": [
+				},
 				{
-					"name": "welcome message section",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "{{admin_token}}",
-									"type": "string"
+					"name": "site  setting",
+					"item": [
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/site-setting?paginate=1&page=&limit=&search_keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"site-setting"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										}
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "_method",
-									"value": "patch",
-									"type": "text",
-									"disabled": true
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
 								},
-								{
-									"key": "welcome_message_headperson_name",
-									"value": "offer 1 up",
-									"type": "text"
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
 								},
-								{
-									"key": "welcome_message_headperson_designation",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "welcome_message_description",
-									"value": "",
-									"type": "text"
-								},
-								{
-									"key": "welcome_message_headperson_signature",
-									"type": "file",
-									"src": "/C:/Users/August/Downloads/QRDown.png"
+								"url": {
+									"raw": "{{url}}/admin/site-setting/:key",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"site-setting",
+										":key"
+									],
+									"variable": [
+										{
+											"key": "key",
+											"value": "welcome_message_headperson_name"
+										}
+									]
 								}
-							]
+							},
+							"response": []
 						},
-						"url": {
-							"raw": "{{url}}/admin/site-setting/welcome-message-section",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"admin",
-								"site-setting",
-								"welcome-message-section"
-							]
+						{
+							"name": "welcome message section",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "welcome_message_headperson_name",
+											"value": "offer 1",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_headperson_designation",
+											"value": "post",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_description",
+											"value": "asdfghj gfhj",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_headperson_signature",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/QRDown.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/site-setting-welcome-message-section",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"site-setting-welcome-message-section"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deals section",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "deals_name",
+											"value": "offer 1 up",
+											"type": "text"
+										},
+										{
+											"key": "deals_description",
+											"value": "asdfghj gfhj",
+											"type": "text"
+										},
+										{
+											"key": "deals_image",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/QRDown.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/site-setting-deals-section",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"site-setting-deals-section"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "rooms section",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "rooms_text",
+											"value": "offer 1 up",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/site-setting-rooms-section",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"site-setting-rooms-section"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "special offer section",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "special_offer_title",
+											"value": "offer 1 up",
+											"type": "text"
+										},
+										{
+											"key": "special_offer_description",
+											"value": "post",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/site-setting-special-offer-section",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"site-setting-special-offer-section"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "about banner section",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "about_banner_title",
+											"value": "offer 1 up",
+											"type": "text"
+										},
+										{
+											"key": "about_banner_image",
+											"value": "post",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/site-setting-about-banner-section",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"site-setting-about-banner-section"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "message section",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "message_why_choose_us",
+											"value": "offer 1 up",
+											"type": "text"
+										},
+										{
+											"key": "message_overview",
+											"value": "post",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/site-setting-message-section",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"site-setting-message-section"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "welcome message section",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "welcome_message_headperson_name",
+											"value": "offer 1 up",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_headperson_designation",
+											"value": "post",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_description",
+											"value": "asdfghj gfhj",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_headperson_signature",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/QRDown.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/site-setting-welcome-message-section",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"site-setting-welcome-message-section"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deals section",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "welcome_message_headperson_name",
+											"value": "offer 1 up",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_headperson_designation",
+											"value": "post",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_description",
+											"value": "asdfghj gfhj",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_headperson_signature",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/QRDown.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/site-setting-deals-section",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"site-setting-deals-section"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "rooms section",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "welcome_message_headperson_name",
+											"value": "offer 1 up",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_headperson_designation",
+											"value": "post",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_description",
+											"value": "asdfghj gfhj",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_headperson_signature",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/QRDown.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/site-setting-rooms-section",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"site-setting-rooms-section"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "special offers section",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "welcome_message_headperson_name",
+											"value": "offer 1 up",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_headperson_designation",
+											"value": "post",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_description",
+											"value": "asdfghj gfhj",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_headperson_signature",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/QRDown.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/site-setting-special-offer-section",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"site-setting-special-offer-section"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "about banner section",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "welcome_message_headperson_name",
+											"value": "offer 1 up",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_headperson_designation",
+											"value": "post",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_description",
+											"value": "asdfghj gfhj",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_headperson_signature",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/QRDown.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/site-setting-about-banner-section",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"site-setting-about-banner-section"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "message section",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "welcome_message_headperson_name",
+											"value": "offer 1 up",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_headperson_designation",
+											"value": "post",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_description",
+											"value": "asdfghj gfhj",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_headperson_signature",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/QRDown.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/site-setting-message-section",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"site-setting-message-section"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
+				},
+				{
+					"name": "mission",
+					"item": [
+						{
+							"name": "store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "offer1",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/QRDown.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/mission",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"mission"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "offer 1 up",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/Compressed/test-images/8801fbbf0175e2a6323cf0540c6a27c4.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/mission/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"mission",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/mission/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"mission",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/mission?paginate=1&page=&limit=&search_keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"mission"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/mission/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"mission",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
