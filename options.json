@@ -16,7 +16,7 @@
 	},
 	"servers": [
 		{
-			"url": "https://hotel.scodus.com/api",
+			"url": "http://hotel.scodus.com/api",
 			"description": "Base URL"
 		}
 	]
