@@ -11,6 +11,565 @@
 			"name": "admin",
 			"item": [
 				{
+					"name": "album",
+					"item": [
+						{
+							"name": "store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "title",
+											"type": "text"
+										},
+										{
+											"key": "feature_image",
+											"type": "file",
+											"src": "/home/user--49/Pictures/Screenshots/Screenshot from 2023-07-28 15-49-52.png"
+										},
+										{
+											"key": "status",
+											"value": "active",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/album",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"album"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "title edit",
+											"type": "text"
+										},
+										{
+											"key": "feature_image",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "status",
+											"value": "active",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/album/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"album",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/album/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"album",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/album?paginate=1&page=&limit=&search_keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"album"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/album/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"album",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "gallery",
+					"item": [
+						{
+							"name": "store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "title",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/home/user--49/Pictures/Screenshots/Screenshot from 2023-07-28 15-49-52.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/gallery/:album_id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"gallery",
+										":album_id"
+									],
+									"variable": [
+										{
+											"key": "album_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "title edit",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/gallery/:album_id/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"gallery",
+										":album_id",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "album_id",
+											"value": "1"
+										},
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/gallery/:album_id/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"gallery",
+										":album_id",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "album_id",
+											"value": "1"
+										},
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/gallery/:album_id?paginate=1&page=&limit=&search_keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"gallery",
+										":album_id"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "album_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/gallery/:album_id/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"gallery",
+										":album_id",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "album_id",
+											"value": "1"
+										},
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "user",
 					"item": [
 						{
@@ -1692,565 +2251,6 @@
 					]
 				},
 				{
-					"name": "album",
-					"item": [
-						{
-							"name": "store",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "title",
-											"value": "title",
-											"type": "text"
-										},
-										{
-											"key": "feature_image",
-											"type": "file",
-											"src": "/home/user--49/Pictures/Screenshots/Screenshot from 2023-07-28 15-49-52.png"
-										},
-										{
-											"key": "status",
-											"value": "active",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/admin/album",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"album"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "update",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "title",
-											"value": "title edit",
-											"type": "text"
-										},
-										{
-											"key": "feature_image",
-											"type": "file",
-											"src": []
-										},
-										{
-											"key": "status",
-											"value": "active",
-											"type": "text"
-										},
-										{
-											"key": "_method",
-											"value": "patch",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/admin/album/:id",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"album",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "1"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "delete",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "{{url}}/admin/album/:id",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"album",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "2"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "list",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/admin/album?paginate=1&page=&limit=&search_keyword=",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"album"
-									],
-									"query": [
-										{
-											"key": "paginate",
-											"value": "1"
-										},
-										{
-											"key": "page",
-											"value": ""
-										},
-										{
-											"key": "limit",
-											"value": ""
-										},
-										{
-											"key": "search_keyword",
-											"value": ""
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "show",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "{{url}}/admin/album/:id",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"album",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "1"
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "gallery",
-					"item": [
-						{
-							"name": "store",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "title",
-											"value": "title",
-											"type": "text"
-										},
-										{
-											"key": "image",
-											"type": "file",
-											"src": "/home/user--49/Pictures/Screenshots/Screenshot from 2023-07-28 15-49-52.png"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/admin/gallery/:album_id",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"gallery",
-										":album_id"
-									],
-									"variable": [
-										{
-											"key": "album_id",
-											"value": "1"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "update",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "title",
-											"value": "title edit",
-											"type": "text"
-										},
-										{
-											"key": "image",
-											"type": "file",
-											"src": []
-										},
-										{
-											"key": "_method",
-											"value": "patch",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/admin/gallery/:album_id/:id",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"gallery",
-										":album_id",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "album_id",
-											"value": "1"
-										},
-										{
-											"key": "id",
-											"value": "1"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "delete",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "{{url}}/admin/gallery/:album_id/:id",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"gallery",
-										":album_id",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "album_id",
-											"value": "1"
-										},
-										{
-											"key": "id",
-											"value": "2"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "list",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/admin/gallery/:album_id?paginate=1&page=&limit=&search_keyword=",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"gallery",
-										":album_id"
-									],
-									"query": [
-										{
-											"key": "paginate",
-											"value": "1"
-										},
-										{
-											"key": "page",
-											"value": ""
-										},
-										{
-											"key": "limit",
-											"value": ""
-										},
-										{
-											"key": "search_keyword",
-											"value": ""
-										}
-									],
-									"variable": [
-										{
-											"key": "album_id",
-											"value": "1"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "show",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "{{url}}/admin/gallery/:album_id/:id",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"gallery",
-										":album_id",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "album_id",
-											"value": "1"
-										},
-										{
-											"key": "id",
-											"value": "1"
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
 					"name": "department",
 					"item": [
 						{
@@ -3473,7 +3473,8 @@
 										{
 											"key": "status",
 											"value": "ongoing",
-											"type": "text"
+											"type": "text",
+											"disabled": true
 										}
 									]
 								},
@@ -5181,8 +5182,8 @@
 										},
 										{
 											"key": "about_banner_image",
-											"value": "post",
-											"type": "text"
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/Compressed/test-images/1.jpg"
 										}
 									]
 								},
@@ -5224,13 +5225,13 @@
 											"disabled": true
 										},
 										{
-											"key": "message_why_choose_us",
-											"value": "offer 1 up",
+											"key": "message_overview",
+											"value": "post",
 											"type": "text"
 										},
 										{
-											"key": "message_overview",
-											"value": "post",
+											"key": "message_why_choose_us",
+											"value": "offer 1 up",
 											"type": "text"
 										}
 									]
@@ -5657,7 +5658,7 @@
 										{
 											"key": "image",
 											"type": "file",
-											"src": "/C:/Users/August/Downloads/QRDown.png"
+											"src": "/C:/Users/August/Downloads/Compressed/test-images/1.jpg"
 										}
 									]
 								},
@@ -5722,7 +5723,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "3"
+											"value": "2"
 										}
 									]
 								}
@@ -5873,7 +5874,787 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "3"
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Manual Enquiry",
+					"item": [
+						{
+							"name": "store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "offer1",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/Compressed/test-images/1.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/mission",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"mission"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "offer 1 up",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/Compressed/test-images/8801fbbf0175e2a6323cf0540c6a27c4.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/mission/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"mission",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/mission/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"mission",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/mission?paginate=1&page=&limit=&search_keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"mission"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/mission/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"mission",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Package Enquiry",
+					"item": [
+						{
+							"name": "store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "offer1",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/Compressed/test-images/1.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/mission",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"mission"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "offer 1 up",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/Compressed/test-images/8801fbbf0175e2a6323cf0540c6a27c4.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/mission/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"mission",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/mission/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"mission",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/mission?paginate=1&page=&limit=&search_keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"mission"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/mission/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"mission",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Contact Enquiry",
+					"item": [
+						{
+							"name": "store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "offer1",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/Compressed/test-images/1.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/mission",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"mission"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "offer 1 up",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/Compressed/test-images/8801fbbf0175e2a6323cf0540c6a27c4.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/mission/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"mission",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/mission/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"mission",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/mission?paginate=1&page=&limit=&search_keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"mission"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/mission/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"mission",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
 										}
 									]
 								}

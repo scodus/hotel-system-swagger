@@ -16,21 +16,21 @@ servers:
     description: Base URL
 components:
   securitySchemes:
-    noauthAuth:
-      type: http
-      scheme: noauth
     bearerAuth:
       type: http
       scheme: bearer
+    noauthAuth:
+      type: http
+      scheme: noauth
 tags:
   - name: admin
+  - name: admin > album
+  - name: admin > gallery
   - name: admin > user
   - name: admin > amenity
   - name: admin > room
   - name: admin > room type
   - name: admin > floor plan
-  - name: admin > album
-  - name: admin > gallery
   - name: admin > department
   - name: admin > position
   - name: admin > employee
@@ -42,7 +42,324 @@ tags:
   - name: admin > offer
   - name: admin > site  setting
   - name: admin > mission
+  - name: admin > Manual Enquiry
+  - name: admin > Package Enquiry
+  - name: admin > Contact Enquiry
 paths:
+  /admin/album:
+    post:
+      tags:
+        - admin > album
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: title
+                feature_image:
+                  type: string
+                  format: binary
+                status:
+                  type: string
+                  example: active
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > album
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/album/{id}:
+    post:
+      tags:
+        - admin > album
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: title edit
+                feature_image:
+                  type: string
+                  format: binary
+                status:
+                  type: string
+                  example: active
+                _method:
+                  type: string
+                  example: patch
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - admin > album
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > album
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/gallery/{album_id}:
+    post:
+      tags:
+        - admin > gallery
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: title
+                image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: album_id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > gallery
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+        - name: album_id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/gallery/{album_id}/{id}:
+    post:
+      tags:
+        - admin > gallery
+      summary: update
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: title edit
+                image:
+                  type: string
+                  format: binary
+                _method:
+                  type: string
+                  example: patch
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: album_id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - admin > gallery
+      summary: delete
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: album_id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > gallery
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: album_id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /admin/register:
     post:
       tags:
@@ -892,320 +1209,6 @@ paths:
             type: integer
           required: true
           example: '4'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /admin/album:
-    post:
-      tags:
-        - admin > album
-      summary: store
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                title:
-                  type: string
-                  example: title
-                feature_image:
-                  type: string
-                  format: binary
-                status:
-                  type: string
-                  example: active
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: Accept
-          in: header
-          schema:
-            type: string
-          example: application/json
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-    get:
-      tags:
-        - admin > album
-      summary: list
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: paginate
-          in: query
-          schema:
-            type: integer
-          example: '1'
-        - name: page
-          in: query
-          schema:
-            type: string
-        - name: limit
-          in: query
-          schema:
-            type: string
-        - name: search_keyword
-          in: query
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /admin/album/{id}:
-    post:
-      tags:
-        - admin > album
-      summary: update
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                title:
-                  type: string
-                  example: title edit
-                feature_image:
-                  type: string
-                  format: binary
-                status:
-                  type: string
-                  example: active
-                _method:
-                  type: string
-                  example: patch
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: id
-          in: path
-          schema:
-            type: integer
-          required: true
-          example: '1'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-    delete:
-      tags:
-        - admin > album
-      summary: delete
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: Accept
-          in: header
-          schema:
-            type: string
-          example: application/json
-        - name: id
-          in: path
-          schema:
-            type: integer
-          required: true
-          example: '2'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-    get:
-      tags:
-        - admin > album
-      summary: show
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: Accept
-          in: header
-          schema:
-            type: string
-          example: application/json
-        - name: id
-          in: path
-          schema:
-            type: integer
-          required: true
-          example: '1'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /admin/gallery/{album_id}:
-    post:
-      tags:
-        - admin > gallery
-      summary: store
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                title:
-                  type: string
-                  example: title
-                image:
-                  type: string
-                  format: binary
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: Accept
-          in: header
-          schema:
-            type: string
-          example: application/json
-        - name: album_id
-          in: path
-          schema:
-            type: integer
-          required: true
-          example: '1'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-    get:
-      tags:
-        - admin > gallery
-      summary: list
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: paginate
-          in: query
-          schema:
-            type: integer
-          example: '1'
-        - name: page
-          in: query
-          schema:
-            type: string
-        - name: limit
-          in: query
-          schema:
-            type: string
-        - name: search_keyword
-          in: query
-          schema:
-            type: string
-        - name: album_id
-          in: path
-          schema:
-            type: integer
-          required: true
-          example: '1'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /admin/gallery/{album_id}/{id}:
-    post:
-      tags:
-        - admin > gallery
-      summary: update
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                title:
-                  type: string
-                  example: title edit
-                image:
-                  type: string
-                  format: binary
-                _method:
-                  type: string
-                  example: patch
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: album_id
-          in: path
-          schema:
-            type: integer
-          required: true
-          example: '1'
-        - name: id
-          in: path
-          schema:
-            type: integer
-          required: true
-          example: '1'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-    delete:
-      tags:
-        - admin > gallery
-      summary: delete
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: Accept
-          in: header
-          schema:
-            type: string
-          example: application/json
-        - name: album_id
-          in: path
-          schema:
-            type: integer
-          required: true
-          example: '1'
-        - name: id
-          in: path
-          schema:
-            type: integer
-          required: true
-          example: '2'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-    get:
-      tags:
-        - admin > gallery
-      summary: show
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: Accept
-          in: header
-          schema:
-            type: string
-          example: application/json
-        - name: album_id
-          in: path
-          schema:
-            type: integer
-          required: true
-          example: '1'
-        - name: id
-          in: path
-          schema:
-            type: integer
-          required: true
-          example: '1'
       responses:
         '200':
           description: Successful response
@@ -2797,7 +2800,7 @@ paths:
                   example: offer 1 up
                 about_banner_image:
                   type: string
-                  example: post
+                  format: binary
       security:
         - bearerAuth: []
       responses:
@@ -2830,12 +2833,12 @@ paths:
                 _method:
                   type: string
                   example: patch
-                message_why_choose_us:
-                  type: string
-                  example: offer 1 up
                 message_overview:
                   type: string
                   example: post
+                message_why_choose_us:
+                  type: string
+                  example: offer 1 up
       security:
         - bearerAuth: []
       responses:
@@ -2857,7 +2860,7 @@ paths:
   /admin/mission:
     post:
       tags:
-        - admin > mission
+        - admin > Contact Enquiry
       summary: store
       requestBody:
         content:
@@ -2886,7 +2889,7 @@ paths:
             application/json: {}
     get:
       tags:
-        - admin > mission
+        - admin > Contact Enquiry
       summary: list
       security:
         - bearerAuth: []
@@ -2916,7 +2919,7 @@ paths:
   /admin/mission/{id}:
     post:
       tags:
-        - admin > mission
+        - admin > Contact Enquiry
       summary: update
       requestBody:
         content:
@@ -2941,7 +2944,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '3'
+          example: '2'
       responses:
         '200':
           description: Successful response
@@ -2949,7 +2952,7 @@ paths:
             application/json: {}
     delete:
       tags:
-        - admin > mission
+        - admin > Contact Enquiry
       summary: delete
       security:
         - bearerAuth: []
@@ -2972,7 +2975,7 @@ paths:
             application/json: {}
     get:
       tags:
-        - admin > mission
+        - admin > Contact Enquiry
       summary: show
       security:
         - bearerAuth: []
@@ -2987,7 +2990,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '3'
+          example: '2'
       responses:
         '200':
           description: Successful response
