@@ -3456,8 +3456,9 @@
 										},
 										{
 											"key": "room_id[]",
-											"value": "13",
-											"type": "text"
+											"value": "17",
+											"type": "text",
+											"disabled": true
 										},
 										{
 											"key": "room_id[]",
@@ -3467,7 +3468,7 @@
 										},
 										{
 											"key": "employee_id",
-											"value": "1",
+											"value": "2",
 											"type": "text"
 										},
 										{
@@ -5911,25 +5912,35 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "title",
-											"value": "offer1",
+											"key": "name",
+											"value": "name1",
 											"type": "text"
 										},
 										{
-											"key": "image",
-											"type": "file",
-											"src": "/C:/Users/August/Downloads/Compressed/test-images/1.jpg"
+											"key": "email",
+											"value": "a@b.com",
+											"type": "text"
+										},
+										{
+											"key": "subject",
+											"value": "sdfghngdfgdfgdfg  dgfg",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "sadf  dfsa  sdfa dfsa  sfda sd",
+											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{url}}/admin/mission",
+									"raw": "{{url}}/admin/manual-enquiry",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
-										"mission"
+										"manual-enquiry"
 									]
 								}
 							},
@@ -5959,31 +5970,41 @@
 											"type": "text"
 										},
 										{
-											"key": "title",
-											"value": "offer 1 up",
+											"key": "name",
+											"value": "name1",
 											"type": "text"
 										},
 										{
-											"key": "image",
-											"type": "file",
-											"src": "/C:/Users/August/Downloads/Compressed/test-images/8801fbbf0175e2a6323cf0540c6a27c4.jpg"
+											"key": "email",
+											"value": "a@b.com",
+											"type": "text"
+										},
+										{
+											"key": "subject",
+											"value": "sdfghngdfgdfgdfg  dgfg",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "sadf  dfsa  sdfa dfsa  sfda sd",
+											"type": "text"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{url}}/admin/mission/:id",
+									"raw": "{{url}}/admin/manual-enquiry/:id",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
-										"mission",
+										"manual-enquiry",
 										":id"
 									],
 									"variable": [
 										{
 											"key": "id",
-											"value": "2"
+											"value": "1"
 										}
 									]
 								}
@@ -6016,13 +6037,13 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{url}}/admin/mission/:id",
+									"raw": "{{url}}/admin/manual-enquiry/:id",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
-										"mission",
+										"manual-enquiry",
 										":id"
 									],
 									"variable": [
@@ -6063,13 +6084,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/admin/mission?paginate=1&page=&limit=&search_keyword=",
+									"raw": "{{url}}/admin/manual-enquiry?paginate=1&page=&limit=&search_keyword=",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
-										"mission"
+										"manual-enquiry"
 									],
 									"query": [
 										{
@@ -6122,279 +6143,19 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{url}}/admin/mission/:id",
+									"raw": "{{url}}/admin/manual-enquiry/:id",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
-										"mission",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "2"
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Package Enquiry",
-					"item": [
-						{
-							"name": "store",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "title",
-											"value": "offer1",
-											"type": "text"
-										},
-										{
-											"key": "image",
-											"type": "file",
-											"src": "/C:/Users/August/Downloads/Compressed/test-images/1.jpg"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/admin/mission",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"mission"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "update",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "_method",
-											"value": "patch",
-											"type": "text"
-										},
-										{
-											"key": "title",
-											"value": "offer 1 up",
-											"type": "text"
-										},
-										{
-											"key": "image",
-											"type": "file",
-											"src": "/C:/Users/August/Downloads/Compressed/test-images/8801fbbf0175e2a6323cf0540c6a27c4.jpg"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/admin/mission/:id",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"mission",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "2"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "delete",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "{{url}}/admin/mission/:id",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"mission",
+										"manual-enquiry",
 										":id"
 									],
 									"variable": [
 										{
 											"key": "id",
 											"value": "1"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "list",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/admin/mission?paginate=1&page=&limit=&search_keyword=",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"mission"
-									],
-									"query": [
-										{
-											"key": "paginate",
-											"value": "1"
-										},
-										{
-											"key": "page",
-											"value": ""
-										},
-										{
-											"key": "limit",
-											"value": ""
-										},
-										{
-											"key": "search_keyword",
-											"value": ""
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "show",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "{{url}}/admin/mission/:id",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"mission",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "2"
 										}
 									]
 								}
@@ -6407,110 +6168,6 @@
 					"name": "Contact Enquiry",
 					"item": [
 						{
-							"name": "store",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "title",
-											"value": "offer1",
-											"type": "text"
-										},
-										{
-											"key": "image",
-											"type": "file",
-											"src": "/C:/Users/August/Downloads/Compressed/test-images/1.jpg"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/admin/mission",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"mission"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "update",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "_method",
-											"value": "patch",
-											"type": "text"
-										},
-										{
-											"key": "title",
-											"value": "offer 1 up",
-											"type": "text"
-										},
-										{
-											"key": "image",
-											"type": "file",
-											"src": "/C:/Users/August/Downloads/Compressed/test-images/8801fbbf0175e2a6323cf0540c6a27c4.jpg"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/admin/mission/:id",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"mission",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "2"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "delete",
 							"request": {
 								"auth": {
@@ -6536,13 +6193,13 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{url}}/admin/mission/:id",
+									"raw": "{{url}}/admin/contact-enquiry/:id",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
-										"mission",
+										"contact-enquiry",
 										":id"
 									],
 									"variable": [
@@ -6583,13 +6240,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/admin/mission?paginate=1&page=&limit=&search_keyword=",
+									"raw": "{{url}}/admin/contact-enquiry?paginate=1&page=&limit=&search_keyword=",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
-										"mission"
+										"contact-enquiry"
 									],
 									"query": [
 										{
@@ -6642,19 +6299,1072 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{url}}/admin/mission/:id",
+									"raw": "{{url}}/admin/contact-enquiry/:id",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
-										"mission",
+										"contact-enquiry",
 										":id"
 									],
 									"variable": [
 										{
 											"key": "id",
-											"value": "2"
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "name1",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "a@b.com",
+											"type": "text"
+										},
+										{
+											"key": "subject",
+											"value": "sdfghngdfgdfgdfg  dgfg",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "sadf  dfsa  sdfa dfsa  sfda sd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/contact-enquiry",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"contact-enquiry"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "name1",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "a@b.com",
+											"type": "text"
+										},
+										{
+											"key": "subject",
+											"value": "sdfghngdfgdfgdfg  dgfg",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "sadf  dfsa  sdfa dfsa  sfda sd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/contact-enquiry/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"contact-enquiry",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Package Enquiry",
+					"item": [
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/package-enquiry/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"package-enquiry",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/package-enquiry?paginate=1&page=&limit=&search_keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"package-enquiry"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/package-enquiry/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"package-enquiry",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "name1",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "a@b.com",
+											"type": "text"
+										},
+										{
+											"key": "package",
+											"value": "sdfghngdfgdfgdfg  dgfg",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "sadf  dfsa  sdfa dfsa  sfda sd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/package-enquiry",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"package-enquiry"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "name1",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "a@b.com",
+											"type": "text"
+										},
+										{
+											"key": "package",
+											"value": "sdfghngdfgdfgdfg  dgfg",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "sadf  dfsa  sdfa dfsa  sfda sd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/package-enquiry/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"package-enquiry",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "roster-task-time-employee, roster-floor-plan-date",
+					"item": [
+						{
+							"name": "store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"floor_plan_id\": 1,\r\n    \"date\": \"2023-08-23\",\r\n    \"roster_task_time_employee\": [\r\n        {\r\n            \"roster_task_id\": 1,\r\n            \"roster_time_employee\": [\r\n                {\r\n                    \"roster_time_id\": 1,\r\n                    \"employee_id\": 1\r\n                },\r\n                {\r\n                    \"roster_time_id\": 2,\r\n                    \"employee_id\": 1\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"roster_task_id\": 2,\r\n            \"roster_time_employee\": [\r\n                {\r\n                    \"roster_time_id\": 1,\r\n                    \"employee_id\": 1\r\n                },\r\n                {\r\n                    \"roster_time_id\": 2,\r\n                    \"employee_id\": 2\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/roster-task-time-employee",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"roster-task-time-employee"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get date ->  roster task  time employee with floor plan list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/roster-task-time-employee/with/floor-plan?paginate=&page=&limit=&search_keyword=&date=2023-08-23",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"roster-task-time-employee",
+										"with",
+										"floor-plan"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": ""
+										},
+										{
+											"key": "page",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										},
+										{
+											"key": "date",
+											"value": "2023-08-23"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "tk 1",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "inactive",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/roster-task-time-employee/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"roster-task-time-employee",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/roster-task-time-employee/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"roster-task-time-employee",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/roster-task-time-employee?paginate=1&page=&limit=&search_keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"roster-task-time-employee"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/roster-task-time-employee/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"roster-task-time-employee",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Booking",
+					"item": [
+						{
+							"name": "list rooms",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/booking-search-rooms?check_in_date=2023-08-24&check_in_date=2023-08-25",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"booking-search-rooms"
+									],
+									"query": [
+										{
+											"key": "check_in_date",
+											"value": "2023-08-24"
+										},
+										{
+											"key": "check_in_date",
+											"value": "2023-08-25"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "name1",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "a@b.com",
+											"type": "text"
+										},
+										{
+											"key": "package",
+											"value": "sdfghngdfgdfgdfg  dgfg",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "sadf  dfsa  sdfa dfsa  sfda sd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/booking",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"booking"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "name1",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "a@b.com",
+											"type": "text"
+										},
+										{
+											"key": "package",
+											"value": "sdfghngdfgdfgdfg  dgfg",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "sadf  dfsa  sdfa dfsa  sfda sd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/booking/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"booking",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/booking/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"booking",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list Copy",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/booking?paginate=1&page=&limit=&search_keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"booking"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/booking/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"booking",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
 										}
 									]
 								}
