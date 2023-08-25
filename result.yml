@@ -3662,12 +3662,12 @@ paths:
           in: query
           schema:
             type: string
-          example: '2023-08-25'
+          example: '2023-07-24'
         - name: check_out
           in: query
           schema:
             type: string
-          example: '2023-08-27'
+          example: '2023-09-27'
       responses:
         '200':
           description: Successful response
@@ -3739,16 +3739,13 @@ paths:
                   example: '1'
                 room_id[]:
                   type: integer
-                  example: '12'
+                  example: '15'
                 amount:
                   type: integer
                   example: '100'
                 discount:
                   type: integer
                   example: '10'
-                id_card[]:
-                  type: string
-                  format: binary
                 gender:
                   type: string
                   example: male
@@ -3764,6 +3761,22 @@ paths:
                 country:
                   type: string
                   example: Nepal
+                id_card[0][title]:
+                  type: string
+                  description: >-
+                    * id_card is array where id_card = [ {"title" :
+                    id_card_front, "image": ........} , {"title" : id_card_back,
+                    "image": ........}]
+                  example: id_card_front
+                id_card[0][image]:
+                  type: string
+                  format: binary
+                id_card[1][title]:
+                  type: string
+                  example: id_card_back
+                id_card[1][image]:
+                  type: string
+                  format: binary
       security:
         - bearerAuth: []
       parameters:
@@ -3814,18 +3827,9 @@ paths:
                 _method:
                   type: string
                   example: patch
-                name:
-                  type: string
-                  example: name1
-                email:
-                  type: string
-                  example: a@b.com
-                package:
-                  type: string
-                  example: sdfghngdfgdfgdfg  dgfg
-                description:
-                  type: string
-                  example: sadf  dfsa  sdfa dfsa  sfda sd
+                paid:
+                  type: integer
+                  example: '10'
       security:
         - bearerAuth: []
       parameters:

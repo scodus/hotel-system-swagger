@@ -7074,7 +7074,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/admin/booking/search/available-rooms?paginate=1&page=&limit=&search_keyword=&check_in=2023-08-25&check_out=2023-08-27",
+									"raw": "{{url}}/admin/booking/search/available-rooms?paginate=1&page=&limit=&search_keyword=&check_in=2023-07-24&check_out=2023-09-27",
 									"host": [
 										"{{url}}"
 									],
@@ -7103,11 +7103,11 @@
 										},
 										{
 											"key": "check_in",
-											"value": "2023-08-25"
+											"value": "2023-07-24"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-08-27"
+											"value": "2023-09-27"
 										}
 									]
 								}
@@ -7286,12 +7286,12 @@
 										},
 										{
 											"key": "room_id[]",
-											"value": "11",
+											"value": "14",
 											"type": "text"
 										},
 										{
 											"key": "room_id[]",
-											"value": "12",
+											"value": "15",
 											"type": "text"
 										},
 										{
@@ -7303,16 +7303,6 @@
 											"key": "discount",
 											"value": "10",
 											"type": "text"
-										},
-										{
-											"key": "id_card[]",
-											"type": "file",
-											"src": "/C:/Users/August/Downloads/QRDown.png"
-										},
-										{
-											"key": "id_card[]",
-											"type": "file",
-											"src": "/C:/Users/August/Downloads/QRDown.png"
 										},
 										{
 											"key": "gender",
@@ -7338,6 +7328,27 @@
 											"key": "country",
 											"value": "Nepal",
 											"type": "text"
+										},
+										{
+											"key": "id_card[0][title]",
+											"value": "id_card_front",
+											"description": "* id_card is array where id_card = [ {\"title\" : id_card_front, \"image\": ........} , {\"title\" : id_card_back, \"image\": ........}]",
+											"type": "text"
+										},
+										{
+											"key": "id_card[0][image]",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/QRDown.png"
+										},
+										{
+											"key": "id_card[1][title]",
+											"value": "id_card_back",
+											"type": "text"
+										},
+										{
+											"key": "id_card[1][image]",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/QRDown.png"
 										}
 									]
 								},
@@ -7450,23 +7461,8 @@
 											"type": "text"
 										},
 										{
-											"key": "name",
-											"value": "name1",
-											"type": "text"
-										},
-										{
-											"key": "email",
-											"value": "a@b.com",
-											"type": "text"
-										},
-										{
-											"key": "package",
-											"value": "sdfghngdfgdfgdfg  dgfg",
-											"type": "text"
-										},
-										{
-											"key": "description",
-											"value": "sadf  dfsa  sdfa dfsa  sfda sd",
+											"key": "paid",
+											"value": "10",
 											"type": "text"
 										}
 									]
