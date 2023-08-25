@@ -7047,7 +7047,7 @@
 					"name": "Booking",
 					"item": [
 						{
-							"name": "list rooms",
+							"name": "list available rooms",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -7074,22 +7074,146 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/admin/booking-search-rooms?check_in_date=2023-08-24&check_in_date=2023-08-25",
+									"raw": "{{url}}/admin/booking/search/available-rooms?paginate=1&page=&limit=&search_keyword=&check_in=2023-08-25&check_out=2023-08-27",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
-										"booking-search-rooms"
+										"booking",
+										"search",
+										"available-rooms"
 									],
 									"query": [
 										{
-											"key": "check_in_date",
-											"value": "2023-08-24"
+											"key": "paginate",
+											"value": "1"
 										},
 										{
-											"key": "check_in_date",
+											"key": "page",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										},
+										{
+											"key": "check_in",
 											"value": "2023-08-25"
+										},
+										{
+											"key": "check_out",
+											"value": "2023-08-27"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/booking?paginate=1&page=&limit=&search_keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"booking"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/booking/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"booking",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "10009"
 										}
 									]
 								}
@@ -7121,23 +7245,98 @@
 									"mode": "formdata",
 									"formdata": [
 										{
+											"key": "check_in",
+											"value": "2023-08-24",
+											"type": "text"
+										},
+										{
+											"key": "check_out",
+											"value": "2023-08-26",
+											"type": "text"
+										},
+										{
 											"key": "name",
-											"value": "name1",
+											"value": "Sirjeet Tamrakaar",
 											"type": "text"
 										},
 										{
 											"key": "email",
-											"value": "a@b.com",
+											"value": "sirjeet@bok.com",
 											"type": "text"
 										},
 										{
-											"key": "package",
-											"value": "sdfghngdfgdfgdfg  dgfg",
+											"key": "phone",
+											"value": "0123456789",
 											"type": "text"
 										},
 										{
-											"key": "description",
-											"value": "sadf  dfsa  sdfa dfsa  sfda sd",
+											"key": "address",
+											"value": "Bokapur",
+											"type": "text"
+										},
+										{
+											"key": "no_of_adults",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "no_of_children",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "room_id[]",
+											"value": "11",
+											"type": "text"
+										},
+										{
+											"key": "room_id[]",
+											"value": "12",
+											"type": "text"
+										},
+										{
+											"key": "amount",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "discount",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "id_card[]",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/QRDown.png"
+										},
+										{
+											"key": "id_card[]",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/QRDown.png"
+										},
+										{
+											"key": "gender",
+											"value": "male",
+											"type": "text"
+										},
+										{
+											"key": "message",
+											"value": "dfgmndgdfsgdfgdf gsdfgsdf gdf ",
+											"type": "text"
+										},
+										{
+											"key": "postCode",
+											"value": "44600",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Kathmandu",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "Nepal",
 											"type": "text"
 										}
 									]
@@ -7150,6 +7349,78 @@
 									"path": [
 										"admin",
 										"booking"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "status cancelled",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/booking/:id/status-cancel",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"booking",
+										":id",
+										"status-cancel"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "10009"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "status checkout",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/booking/:id/status-checkout",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"booking",
+										":id",
+										"status-checkout"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "10009"
+										}
 									]
 								}
 							},
@@ -7234,112 +7505,6 @@
 									]
 								},
 								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
-								"url": {
-									"raw": "{{url}}/admin/booking/:id",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"booking",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "1"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "list Copy",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/admin/booking?paginate=1&page=&limit=&search_keyword=",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"booking"
-									],
-									"query": [
-										{
-											"key": "paginate",
-											"value": "1"
-										},
-										{
-											"key": "page",
-											"value": ""
-										},
-										{
-											"key": "limit",
-											"value": ""
-										},
-										{
-											"key": "search_keyword",
-											"value": ""
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "show",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
 								"header": [
 									{
 										"key": "Accept",

@@ -3633,64 +3633,51 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /admin/booking-search-rooms:
+  /admin/booking/search/available-rooms:
     get:
       tags:
         - admin > Booking
-      summary: list rooms
+      summary: list available rooms
       security:
         - bearerAuth: []
       parameters:
-        - name: check_in_date
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
           in: query
           schema:
             type: string
-          example: '2023-08-24'
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+        - name: check_in
+          in: query
+          schema:
+            type: string
+          example: '2023-08-25'
+        - name: check_out
+          in: query
+          schema:
+            type: string
+          example: '2023-08-27'
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
   /admin/booking:
-    post:
-      tags:
-        - admin > Booking
-      summary: store
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  example: name1
-                email:
-                  type: string
-                  example: a@b.com
-                package:
-                  type: string
-                  example: sdfghngdfgdfgdfg  dgfg
-                description:
-                  type: string
-                  example: sadf  dfsa  sdfa dfsa  sfda sd
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: Accept
-          in: header
-          schema:
-            type: string
-          example: application/json
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
     get:
       tags:
         - admin > Booking
-      summary: list Copy
+      summary: list
       security:
         - bearerAuth: []
       parameters:
@@ -3716,7 +3703,104 @@ paths:
           description: Successful response
           content:
             application/json: {}
+    post:
+      tags:
+        - admin > Booking
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                check_in:
+                  type: string
+                  example: '2023-08-24'
+                check_out:
+                  type: string
+                  example: '2023-08-26'
+                name:
+                  type: string
+                  example: Sirjeet Tamrakaar
+                email:
+                  type: string
+                  example: sirjeet@bok.com
+                phone:
+                  type: integer
+                  example: '0123456789'
+                address:
+                  type: string
+                  example: Bokapur
+                no_of_adults:
+                  type: integer
+                  example: '1'
+                no_of_children:
+                  type: integer
+                  example: '1'
+                room_id[]:
+                  type: integer
+                  example: '12'
+                amount:
+                  type: integer
+                  example: '100'
+                discount:
+                  type: integer
+                  example: '10'
+                id_card[]:
+                  type: string
+                  format: binary
+                gender:
+                  type: string
+                  example: male
+                message:
+                  type: string
+                  example: 'dfgmndgdfsgdfgdf gsdfgsdf gdf '
+                postCode:
+                  type: integer
+                  example: '44600'
+                city:
+                  type: string
+                  example: Kathmandu
+                country:
+                  type: string
+                  example: Nepal
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /admin/booking/{id}:
+    get:
+      tags:
+        - admin > Booking
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '10009'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
     post:
       tags:
         - admin > Booking
@@ -3779,24 +3863,43 @@ paths:
           description: Successful response
           content:
             application/json: {}
-    get:
+  /admin/booking/{id}/status-cancel:
+    post:
       tags:
         - admin > Booking
-      summary: show
+      summary: status cancelled
+      requestBody:
+        content: {}
       security:
         - bearerAuth: []
       parameters:
-        - name: Accept
-          in: header
-          schema:
-            type: string
-          example: application/json
         - name: id
           in: path
           schema:
             type: integer
           required: true
-          example: '1'
+          example: '10009'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/booking/{id}/status-checkout:
+    post:
+      tags:
+        - admin > Booking
+      summary: status checkout
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '10009'
       responses:
         '200':
           description: Successful response
