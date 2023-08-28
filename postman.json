@@ -6851,7 +6851,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"_method\": \"PATCH\",\r\n    \"floor_plan_id\": 1,\r\n    \"date\": \"2023-08-24\",\r\n    \"roster_task_time_employee\": [\r\n        {\r\n            \"roster_task_id\": 1,\r\n            \"roster_time_employee\": [\r\n                {\r\n                    \"roster_time_id\": 1,\r\n                    \"employee_id\": 1\r\n                },\r\n                {\r\n                    \"roster_time_id\": 2,\r\n                    \"employee_id\": 1\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"roster_task_id\": 2,\r\n            \"roster_time_employee\": [\r\n                {\r\n                    \"roster_time_id\": 1,\r\n                    \"employee_id\": 1\r\n                },\r\n                {\r\n                    \"roster_time_id\": 2,\r\n                    \"employee_id\": 2\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"raw": "{\r\n    \"_method\": \"PATCH\",\r\n    \"floor_plan_id\": 1,\r\n    \"date\": \"2023-08-23\",\r\n    \"roster_task_time_employee\": [\r\n        {\r\n            \"roster_task_id\": 1,\r\n            \"roster_time_employee\": [\r\n                {\r\n                    \"roster_time_id\": 1,\r\n                    \"employee_id\": 122\r\n                },\r\n                {\r\n                    \"roster_time_id\": 2,\r\n                    \"employee_id\": 1\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"roster_task_id\": 2,\r\n            \"roster_time_employee\": [\r\n                {\r\n                    \"roster_time_id\": 1,\r\n                    \"employee_id\": 1\r\n                },\r\n                {\r\n                    \"roster_time_id\": 2,\r\n                    \"employee_id\": 200\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -7228,12 +7228,12 @@
 									"formdata": [
 										{
 											"key": "check_in",
-											"value": "2023-08-24",
+											"value": "2023-08-27",
 											"type": "text"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-08-26",
+											"value": "2023-08-28",
 											"type": "text"
 										},
 										{
@@ -7243,7 +7243,7 @@
 										},
 										{
 											"key": "email",
-											"value": "sirjeet@bok.com",
+											"value": "sirjeet@sco.com",
 											"type": "text"
 										},
 										{
@@ -7253,7 +7253,7 @@
 										},
 										{
 											"key": "address",
-											"value": "Bokapur",
+											"value": "kapur",
 											"type": "text"
 										},
 										{
@@ -7268,12 +7268,12 @@
 										},
 										{
 											"key": "room_id[]",
-											"value": "14",
+											"value": "11",
 											"type": "text"
 										},
 										{
 											"key": "room_id[]",
-											"value": "15",
+											"value": "12",
 											"type": "text"
 										},
 										{
