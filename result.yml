@@ -3553,40 +3553,41 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /admin/roster-task-time-employee/{id}:
+  /admin/roster-task-time-employee/update:
     post:
       tags:
         - admin > roster-task-time-employee, roster-floor-plan-date
       summary: update
       requestBody:
         content:
-          multipart/form-data:
+          application/json:
             schema:
               type: object
-              properties:
-                _method:
-                  type: string
-                  example: patch
-                title:
-                  type: string
-                  example: tk 1
-                status:
-                  type: string
-                  example: inactive
+              example:
+                _method: PATCH
+                floor_plan_id: 1
+                date: '2023-08-24'
+                roster_task_time_employee:
+                  - roster_task_id: 1
+                    roster_time_employee:
+                      - roster_time_id: 1
+                        employee_id: 1
+                      - roster_time_id: 2
+                        employee_id: 1
+                  - roster_task_id: 2
+                    roster_time_employee:
+                      - roster_time_id: 1
+                        employee_id: 1
+                      - roster_time_id: 2
+                        employee_id: 2
       security:
         - bearerAuth: []
-      parameters:
-        - name: id
-          in: path
-          schema:
-            type: integer
-          required: true
-          example: '1'
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
+  /admin/roster-task-time-employee/{id}:
     delete:
       tags:
         - admin > roster-task-time-employee, roster-floor-plan-date
@@ -3808,7 +3809,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '10009'
+          example: '10010'
       responses:
         '200':
           description: Successful response
@@ -3829,7 +3830,7 @@ paths:
                   example: patch
                 paid:
                   type: integer
-                  example: '10'
+                  example: '90'
       security:
         - bearerAuth: []
       parameters:
@@ -3838,7 +3839,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '10009'
+          example: '10010'
       responses:
         '200':
           description: Successful response
@@ -3903,7 +3904,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '10009'
+          example: '10010'
       responses:
         '200':
           description: Successful response

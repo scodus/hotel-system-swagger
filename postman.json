@@ -6850,41 +6850,23 @@
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "_method",
-											"value": "patch",
-											"type": "text"
-										},
-										{
-											"key": "title",
-											"value": "tk 1",
-											"type": "text"
-										},
-										{
-											"key": "status",
-											"value": "inactive",
-											"type": "text",
-											"disabled": true
+									"mode": "raw",
+									"raw": "{\r\n    \"_method\": \"PATCH\",\r\n    \"floor_plan_id\": 1,\r\n    \"date\": \"2023-08-24\",\r\n    \"roster_task_time_employee\": [\r\n        {\r\n            \"roster_task_id\": 1,\r\n            \"roster_time_employee\": [\r\n                {\r\n                    \"roster_time_id\": 1,\r\n                    \"employee_id\": 1\r\n                },\r\n                {\r\n                    \"roster_time_id\": 2,\r\n                    \"employee_id\": 1\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"roster_task_id\": 2,\r\n            \"roster_time_employee\": [\r\n                {\r\n                    \"roster_time_id\": 1,\r\n                    \"employee_id\": 1\r\n                },\r\n                {\r\n                    \"roster_time_id\": 2,\r\n                    \"employee_id\": 2\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": {
-									"raw": "{{url}}/admin/roster-task-time-employee/:id",
+									"raw": "{{url}}/admin/roster-task-time-employee/update",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
 										"roster-task-time-employee",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "1"
-										}
+										"update"
 									]
 								}
 							},
@@ -7213,7 +7195,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "10009"
+											"value": "10010"
 										}
 									]
 								}
@@ -7430,7 +7412,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "10009"
+											"value": "10010"
 										}
 									]
 								}
@@ -7462,7 +7444,7 @@
 										},
 										{
 											"key": "paid",
-											"value": "10",
+											"value": "90",
 											"type": "text"
 										}
 									]
@@ -7480,7 +7462,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "10009"
+											"value": "10010"
 										}
 									]
 								}
