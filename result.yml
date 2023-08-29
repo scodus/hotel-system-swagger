@@ -164,7 +164,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '2'
+          example: '1'
       responses:
         '200':
           description: Successful response
@@ -188,6 +188,53 @@ paths:
             type: integer
           required: true
           example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/gallery/{album_id}/store-multiple:
+    post:
+      tags:
+        - admin > gallery
+      summary: store multiple
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                data[0][title]:
+                  type: string
+                  example: title1
+                data[0][image]:
+                  type: string
+                  format: binary
+                data[1][title]:
+                  type: string
+                data[1][image]:
+                  type: string
+                  format: binary
+                image[0]:
+                  type: string
+                  format: binary
+                image[1]:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: album_id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '2'
       responses:
         '200':
           description: Successful response
@@ -223,7 +270,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '1'
+          example: '2'
       responses:
         '200':
           description: Successful response
@@ -258,7 +305,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '1'
+          example: '2'
       responses:
         '200':
           description: Successful response
@@ -3663,12 +3710,12 @@ paths:
           in: query
           schema:
             type: string
-          example: '2023-07-24'
+          example: '2023-08-29'
         - name: check_out
           in: query
           schema:
             type: string
-          example: '2023-09-27'
+          example: '2023-08-29'
       responses:
         '200':
           description: Successful response
@@ -3716,10 +3763,10 @@ paths:
               properties:
                 check_in:
                   type: string
-                  example: '2023-08-27'
+                  example: '2023-08-29'
                 check_out:
                   type: string
-                  example: '2023-08-28'
+                  example: '2023-08-29'
                 name:
                   type: string
                   example: Sirjeet Tamrakaar
@@ -3809,7 +3856,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '10010'
+          example: '10011'
       responses:
         '200':
           description: Successful response
@@ -3839,7 +3886,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '10010'
+          example: '10011'
       responses:
         '200':
           description: Successful response
@@ -3905,6 +3952,43 @@ paths:
             type: integer
           required: true
           example: '10010'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/booking/{id}/payment-store:
+    post:
+      tags:
+        - admin > Booking
+      summary: payment store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                paid_amount:
+                  type: integer
+                  example: '10'
+                payment_method:
+                  type: string
+                  example: fonepay1
+                invoice_no:
+                  type: integer
+                  example: '10100'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '10011'
       responses:
         '200':
           description: Successful response

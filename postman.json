@@ -45,7 +45,7 @@
 										{
 											"key": "feature_image",
 											"type": "file",
-											"src": "/home/user--49/Pictures/Screenshots/Screenshot from 2023-07-28 15-49-52.png"
+											"src": "/C:/Users/August/Downloads/QRDown.png"
 										},
 										{
 											"key": "status",
@@ -93,7 +93,7 @@
 										{
 											"key": "feature_image",
 											"type": "file",
-											"src": []
+											"src": "/C:/Users/August/Downloads/CamScanner 08-27-2023 14.03_3.jpg"
 										},
 										{
 											"key": "status",
@@ -165,7 +165,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "2"
+											"value": "1"
 										}
 									]
 								}
@@ -284,6 +284,85 @@
 					"name": "gallery",
 					"item": [
 						{
+							"name": "store multiple",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "data[0][title]",
+											"value": "title1",
+											"type": "text"
+										},
+										{
+											"key": "data[0][image]",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/2.jpeg"
+										},
+										{
+											"key": "data[1][title]",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "data[1][image]",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/1.jpeg"
+										},
+										{
+											"key": "image[0]",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/1.jpeg",
+											"disabled": true
+										},
+										{
+											"key": "image[1]",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/2.jpeg",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/gallery/:album_id/store-multiple",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"gallery",
+										":album_id",
+										"store-multiple"
+									],
+									"variable": [
+										{
+											"key": "album_id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "store",
 							"request": {
 								"auth": {
@@ -315,7 +394,7 @@
 										{
 											"key": "image",
 											"type": "file",
-											"src": "/home/user--49/Pictures/Screenshots/Screenshot from 2023-07-28 15-49-52.png"
+											"src": "/C:/Users/August/Downloads/2.jpeg"
 										}
 									]
 								},
@@ -332,7 +411,7 @@
 									"variable": [
 										{
 											"key": "album_id",
-											"value": "1"
+											"value": "2"
 										}
 									]
 								}
@@ -507,7 +586,7 @@
 									"variable": [
 										{
 											"key": "album_id",
-											"value": "1"
+											"value": "2"
 										}
 									]
 								}
@@ -7056,7 +7135,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/admin/booking/search/available-rooms?paginate=1&page=&limit=&search_keyword=&check_in=2023-07-24&check_out=2023-09-27",
+									"raw": "{{url}}/admin/booking/search/available-rooms?paginate=1&page=&limit=&search_keyword=&check_in=2023-08-29&check_out=2023-08-29",
 									"host": [
 										"{{url}}"
 									],
@@ -7085,11 +7164,11 @@
 										},
 										{
 											"key": "check_in",
-											"value": "2023-07-24"
+											"value": "2023-08-29"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-09-27"
+											"value": "2023-08-29"
 										}
 									]
 								}
@@ -7195,7 +7274,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "10010"
+											"value": "10011"
 										}
 									]
 								}
@@ -7228,12 +7307,12 @@
 									"formdata": [
 										{
 											"key": "check_in",
-											"value": "2023-08-27",
+											"value": "2023-08-29",
 											"type": "text"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-08-28",
+											"value": "2023-08-29",
 											"type": "text"
 										},
 										{
@@ -7274,7 +7353,8 @@
 										{
 											"key": "room_id[]",
 											"value": "12",
-											"type": "text"
+											"type": "text",
+											"disabled": true
 										},
 										{
 											"key": "amount",
@@ -7320,7 +7400,7 @@
 										{
 											"key": "id_card[0][image]",
 											"type": "file",
-											"src": "/C:/Users/August/Downloads/QRDown.png"
+											"src": "/C:/Users/August/Downloads/2.jpeg"
 										},
 										{
 											"key": "id_card[1][title]",
@@ -7330,7 +7410,7 @@
 										{
 											"key": "id_card[1][image]",
 											"type": "file",
-											"src": "/C:/Users/August/Downloads/QRDown.png"
+											"src": []
 										}
 									]
 								},
@@ -7445,7 +7525,8 @@
 										{
 											"key": "paid",
 											"value": "90",
-											"type": "text"
+											"type": "text",
+											"disabled": true
 										}
 									]
 								},
@@ -7462,7 +7543,69 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "10010"
+											"value": "10011"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "payment store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "paid_amount",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "payment_method",
+											"value": "fonepay1",
+											"type": "text"
+										},
+										{
+											"key": "invoice_no",
+											"value": "10100",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/booking/:id/payment-store",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"booking",
+										":id",
+										"payment-store"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "10011"
 										}
 									]
 								}
