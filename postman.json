@@ -7338,12 +7338,14 @@
 										{
 											"key": "no_of_adults",
 											"value": "1",
-											"type": "text"
+											"type": "text",
+											"disabled": true
 										},
 										{
 											"key": "no_of_children",
 											"value": "1",
-											"type": "text"
+											"type": "text",
+											"disabled": true
 										},
 										{
 											"key": "room_id[]",
@@ -7611,9 +7613,17 @@
 								}
 							},
 							"response": []
-						},
+						}
+					]
+				},
+				{
+					"name": "payment",
+					"item": [
 						{
-							"name": "delete",
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -7625,32 +7635,42 @@
 										}
 									]
 								},
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
+								"method": "GET",
+								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": []
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
 								"url": {
-									"raw": "{{url}}/admin/booking/:id",
+									"raw": "{{url}}/admin/payment?paginate=1&page=&limit=&search_keyword=",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
-										"booking",
-										":id"
+										"payment"
 									],
-									"variable": [
+									"query": [
 										{
-											"key": "id",
+											"key": "paginate",
 											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
 										}
 									]
 								}

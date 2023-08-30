@@ -47,6 +47,7 @@ tags:
   - name: admin > Package Enquiry
   - name: admin > roster-task-time-employee, roster-floor-plan-date
   - name: admin > Booking
+  - name: admin > payment
 paths:
   /admin/album:
     post:
@@ -3892,29 +3893,6 @@ paths:
           description: Successful response
           content:
             application/json: {}
-    delete:
-      tags:
-        - admin > Booking
-      summary: delete
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: Accept
-          in: header
-          schema:
-            type: string
-          example: application/json
-        - name: id
-          in: path
-          schema:
-            type: integer
-          required: true
-          example: '1'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
   /admin/booking/{id}/status-cancel:
     post:
       tags:
@@ -3989,6 +3967,36 @@ paths:
             type: integer
           required: true
           example: '10011'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/payment:
+    get:
+      tags:
+        - admin > payment
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
       responses:
         '200':
           description: Successful response
