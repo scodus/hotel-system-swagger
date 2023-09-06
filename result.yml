@@ -51,6 +51,7 @@ tags:
   - name: front-apis
   - name: front-apis > home
   - name: front-apis > booking
+  - name: front-apis > room type
 paths:
   /admin/album:
     post:
@@ -168,7 +169,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '1'
+          example: '11'
       responses:
         '200':
           description: Successful response
@@ -191,7 +192,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '1'
+          example: '3'
       responses:
         '200':
           description: Successful response
@@ -238,7 +239,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '2'
+          example: '6'
       responses:
         '200':
           description: Successful response
@@ -372,13 +373,13 @@ paths:
           schema:
             type: integer
           required: true
-          example: '1'
+          example: '6'
         - name: id
           in: path
           schema:
             type: integer
           required: true
-          example: '2'
+          example: '14'
       responses:
         '200':
           description: Successful response
@@ -3854,10 +3855,10 @@ paths:
                 address:
                   type: string
                   example: kapur
-                no_of_adults:
+                no_of_adult:
                   type: integer
                   example: '1'
-                no_of_children:
+                no_of_child:
                   type: integer
                   example: '1'
                 room_id[]:
@@ -4073,7 +4074,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /home-page:
+  /homepage:
     get:
       tags:
         - front-apis > home
@@ -4083,7 +4084,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /basic-info:
+  /basicinfo:
     get:
       tags:
         - front-apis > home
@@ -4093,7 +4094,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /about-page:
+  /aboutpage:
     get:
       tags:
         - front-apis > home
@@ -4103,11 +4104,203 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /contact-page:
+  /contact_page:
     get:
       tags:
         - front-apis > home
       summary: contactpage
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /booking/search/available-rooms:
+    get:
+      tags:
+        - front-apis > booking
+      summary: list available rooms
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+        - name: check_in
+          in: query
+          schema:
+            type: string
+          example: '2023-08-30'
+        - name: check_out
+          in: query
+          schema:
+            type: string
+          example: '2023-08-30'
+        - name: no_of_adult
+          in: query
+          schema:
+            type: integer
+          example: '4'
+        - name: no_of_child
+          in: query
+          schema:
+            type: integer
+          example: '2'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /create/booking:
+    post:
+      tags:
+        - front-apis > booking
+      summary: create booking
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                check_in:
+                  type: string
+                  example: '2023-08-30'
+                check_out:
+                  type: string
+                  example: '2023-08-30'
+                name:
+                  type: string
+                  example: Sirjeet Tamrakaar
+                email:
+                  type: string
+                  example: sirjeet@sco.com
+                phone:
+                  type: integer
+                  example: '0123456789'
+                address:
+                  type: string
+                  example: kapur
+                room_id[]:
+                  type: integer
+                  example: '12'
+                amount:
+                  type: integer
+                  example: '100'
+                discount:
+                  type: integer
+                  example: '10'
+                gender:
+                  type: string
+                  example: male
+                message:
+                  type: string
+                  example: 'dfgmndgdfsgdfgdf gsdfgsdf gdf '
+                postCode:
+                  type: integer
+                  example: '44600'
+                city:
+                  type: string
+                  example: Kathmandu
+                country:
+                  type: string
+                  example: Nepal
+                id_card[0][title]:
+                  type: string
+                  description: >-
+                    * id_card is array where id_card = [ {"title" :
+                    id_card_front, "image": ........} , {"title" : id_card_back,
+                    "image": ........}]
+                  example: id_card_front
+                id_card[0][image]:
+                  type: string
+                  format: binary
+                id_card[1][title]:
+                  type: string
+                  example: id_card_back
+                id_card[1][image]:
+                  type: string
+                  format: binary
+                no_of_adult:
+                  type: integer
+                  example: '2'
+                no_of_child:
+                  type: integer
+                  example: '0'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /room-type:
+    get:
+      tags:
+        - front-apis > room type
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /room-type/{id}:
+    get:
+      tags:
+        - front-apis > room type
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '29'
       responses:
         '200':
           description: Successful response

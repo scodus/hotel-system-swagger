@@ -45,7 +45,7 @@
 										{
 											"key": "feature_image",
 											"type": "file",
-											"src": "/C:/Users/August/Downloads/QRDown.png"
+											"src": "/C:/Users/August/Downloads/2.jpeg"
 										},
 										{
 											"key": "status",
@@ -165,7 +165,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "1"
+											"value": "11"
 										}
 									]
 								}
@@ -271,7 +271,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "1"
+											"value": "3"
 										}
 									]
 								}
@@ -315,7 +315,7 @@
 										{
 											"key": "data[0][image]",
 											"type": "file",
-											"src": "/C:/Users/August/Downloads/2.jpeg"
+											"src": "/C:/Users/August/Downloads/1.jpeg"
 										},
 										{
 											"key": "data[1][title]",
@@ -325,7 +325,7 @@
 										{
 											"key": "data[1][image]",
 											"type": "file",
-											"src": "/C:/Users/August/Downloads/1.jpeg"
+											"src": "/C:/Users/August/Downloads/2.jpeg"
 										},
 										{
 											"key": "image[0]",
@@ -355,7 +355,7 @@
 									"variable": [
 										{
 											"key": "album_id",
-											"value": "2"
+											"value": "6"
 										}
 									]
 								}
@@ -517,11 +517,11 @@
 									"variable": [
 										{
 											"key": "album_id",
-											"value": "1"
+											"value": "6"
 										},
 										{
 											"key": "id",
-											"value": "2"
+											"value": "14"
 										}
 									]
 								}
@@ -7501,13 +7501,13 @@
 											"type": "text"
 										},
 										{
-											"key": "no_of_adults",
+											"key": "no_of_adult",
 											"value": "1",
 											"type": "text",
 											"disabled": true
 										},
 										{
-											"key": "no_of_children",
+											"key": "no_of_child",
 											"value": "1",
 											"type": "text",
 											"disabled": true
@@ -7852,12 +7852,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/home-page",
+									"raw": "{{url}}/homepage",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"home-page"
+										"homepage"
 									]
 								}
 							},
@@ -7869,12 +7869,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/basic-info",
+									"raw": "{{url}}/basicinfo",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"basic-info"
+										"basicinfo"
 									]
 								}
 							},
@@ -7886,12 +7886,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/about-page",
+									"raw": "{{url}}/aboutpage",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"about-page"
+										"aboutpage"
 									]
 								}
 							},
@@ -7903,12 +7903,12 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/contact-page",
+									"raw": "{{url}}/contact_page",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"contact-page"
+										"contact_page"
 									]
 								}
 							},
@@ -7918,7 +7918,331 @@
 				},
 				{
 					"name": "booking",
-					"item": []
+					"item": [
+						{
+							"name": "list available rooms",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/booking/search/available-rooms?paginate=1&page=&limit=&search_keyword=&check_in=2023-08-30&check_out=2023-08-30&no_of_adult=4&no_of_child=2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"booking",
+										"search",
+										"available-rooms"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										},
+										{
+											"key": "check_in",
+											"value": "2023-08-30"
+										},
+										{
+											"key": "check_out",
+											"value": "2023-08-30"
+										},
+										{
+											"key": "no_of_adult",
+											"value": "4"
+										},
+										{
+											"key": "no_of_child",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create booking",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "check_in",
+											"value": "2023-08-30",
+											"type": "text"
+										},
+										{
+											"key": "check_out",
+											"value": "2023-08-30",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "Sirjeet Tamrakaar",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "sirjeet@sco.com",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "0123456789",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "kapur",
+											"type": "text"
+										},
+										{
+											"key": "room_id[]",
+											"value": "13",
+											"type": "text"
+										},
+										{
+											"key": "room_id[]",
+											"value": "12",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "amount",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "discount",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "gender",
+											"value": "male",
+											"type": "text"
+										},
+										{
+											"key": "message",
+											"value": "dfgmndgdfsgdfgdf gsdfgsdf gdf ",
+											"type": "text"
+										},
+										{
+											"key": "postCode",
+											"value": "44600",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Kathmandu",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "Nepal",
+											"type": "text"
+										},
+										{
+											"key": "id_card[0][title]",
+											"value": "id_card_front",
+											"description": "* id_card is array where id_card = [ {\"title\" : id_card_front, \"image\": ........} , {\"title\" : id_card_back, \"image\": ........}]",
+											"type": "text"
+										},
+										{
+											"key": "id_card[0][image]",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/2.jpeg"
+										},
+										{
+											"key": "id_card[1][title]",
+											"value": "id_card_back",
+											"type": "text"
+										},
+										{
+											"key": "id_card[1][image]",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "no_of_adult",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "no_of_child",
+											"value": "0",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/create/booking",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"create",
+										"booking"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "room type",
+					"item": [
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/room-type?paginate=1&page=&limit=&search_keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"room-type"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/room-type/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"room-type",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "29"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}
