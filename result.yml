@@ -3756,12 +3756,12 @@ paths:
           in: query
           schema:
             type: string
-          example: '2023-08-29'
+          example: '2023-09-30'
         - name: check_out
           in: query
           schema:
             type: string
-          example: '2023-08-29'
+          example: '2023-09-30'
       responses:
         '200':
           description: Successful response
@@ -3902,7 +3902,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '10011'
+          example: '10015'
       responses:
         '200':
           description: Successful response
@@ -4134,10 +4134,10 @@ paths:
               type: object
               example:
                 occupancy:
-                  - no_of_adult: 5
-                    no_of_child: 6
-                  - no_of_adult: 10
-                    no_of_child: 0
+                  - no_of_adult: 15
+                    no_of_child: 2
+                  - no_of_adult: 4
+                    no_of_child: 1
       security:
         - noauthAuth: []
       parameters:
@@ -4162,12 +4162,12 @@ paths:
           in: query
           schema:
             type: string
-          example: '2023-08-30'
+          example: '2023-09-30'
         - name: check_out
           in: query
           schema:
             type: string
-          example: '2023-08-30'
+          example: '2023-09-30'
       responses:
         '200':
           description: Successful response

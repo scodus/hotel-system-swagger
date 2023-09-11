@@ -7293,7 +7293,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/admin/booking/search/available-rooms?paginate=1&page=&limit=&search_keyword=&check_in=2023-08-29&check_out=2023-08-29",
+									"raw": "{{url}}/admin/booking/search/available-rooms?paginate=1&page=&limit=&search_keyword=&check_in=2023-09-30&check_out=2023-09-30",
 									"host": [
 										"{{url}}"
 									],
@@ -7322,11 +7322,11 @@
 										},
 										{
 											"key": "check_in",
-											"value": "2023-08-29"
+											"value": "2023-09-30"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-08-29"
+											"value": "2023-09-30"
 										}
 									]
 								}
@@ -7432,7 +7432,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "10011"
+											"value": "10015"
 										}
 									]
 								}
@@ -7985,7 +7985,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"occupancy\": [\r\n        {\r\n            \"no_of_adult\": 5,\r\n            \"no_of_child\": 6\r\n        },\r\n        {\r\n            \"no_of_adult\": 10,\r\n            \"no_of_child\": 0\r\n        }\r\n    ]\r\n}",
+									"raw": "{\r\n    \"occupancy\": [\r\n        {\r\n            \"no_of_adult\": 15,\r\n            \"no_of_child\": 2\r\n        },\r\n        {\r\n            \"no_of_adult\": 4,\r\n            \"no_of_child\": 1\r\n        }\r\n    ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -7993,7 +7993,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/booking/search/available-rooms?paginate=1&page=&limit=&search_keyword=&check_in=2023-08-30&check_out=2023-08-30",
+									"raw": "{{url}}/booking/search/available-rooms?paginate=1&page=&limit=&search_keyword=&check_in=2023-09-30&check_out=2023-09-30",
 									"host": [
 										"{{url}}"
 									],
@@ -8021,11 +8021,11 @@
 										},
 										{
 											"key": "check_in",
-											"value": "2023-08-30"
+											"value": "2023-09-30"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-08-30"
+											"value": "2023-09-30"
 										},
 										{
 											"key": "no_of_adult",
