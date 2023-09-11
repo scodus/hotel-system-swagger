@@ -52,6 +52,9 @@ tags:
   - name: front-apis > home
   - name: front-apis > booking
   - name: front-apis > room type
+  - name: front-apis > album
+  - name: front-apis > gallery
+  - name: front-apis > dining
 paths:
   /admin/album:
     post:
@@ -2692,6 +2695,47 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /admin/site-setting-dining-section:
+    post:
+      tags:
+        - admin > site  setting
+      summary: dining section
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: patch
+                dining_name:
+                  type: string
+                  example: offer 1 up
+                dining_description:
+                  type: string
+                  example: asdfghj gfhj
+                dining_image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > site  setting
+      summary: dining  section
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /admin/site-setting-list:
     get:
       tags:
@@ -3319,45 +3363,6 @@ paths:
           description: Successful response
           content:
             application/json: {}
-    post:
-      tags:
-        - admin > Contact Enquiry
-      summary: update
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                _method:
-                  type: string
-                  example: patch
-                name:
-                  type: string
-                  example: name1
-                email:
-                  type: string
-                  example: a@b.com
-                subject:
-                  type: string
-                  example: sdfghngdfgdfgdfg  dgfg
-                description:
-                  type: string
-                  example: sadf  dfsa  sdfa dfsa  sfda sd
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: id
-          in: path
-          schema:
-            type: integer
-          required: true
-          example: '1'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
   /admin/contact-enquiry:
     get:
       tags:
@@ -3383,41 +3388,6 @@ paths:
           in: query
           schema:
             type: string
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-    post:
-      tags:
-        - admin > Contact Enquiry
-      summary: store
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  example: name1
-                email:
-                  type: string
-                  example: a@b.com
-                subject:
-                  type: string
-                  example: sdfghngdfgdfgdfg  dgfg
-                description:
-                  type: string
-                  example: sadf  dfsa  sdfa dfsa  sfda sd
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: Accept
-          in: header
-          schema:
-            type: string
-          example: application/json
       responses:
         '200':
           description: Successful response
@@ -3839,10 +3809,10 @@ paths:
               properties:
                 check_in:
                   type: string
-                  example: '2023-08-29'
+                  example: '2023-09-30'
                 check_out:
                   type: string
-                  example: '2023-08-29'
+                  example: '2023-09-30'
                 name:
                   type: string
                   example: Sirjeet Tamrakaar
@@ -3857,7 +3827,7 @@ paths:
                   example: kapur
                 no_of_adult:
                   type: integer
-                  example: '1'
+                  example: '2'
                 no_of_child:
                   type: integer
                   example: '1'
@@ -4044,6 +4014,27 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /admin/booking/{id}/status-checkin:
+    post:
+      tags:
+        - admin > Booking
+      summary: status checkin
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '10015'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /admin/payment:
     get:
       tags:
@@ -4069,6 +4060,7 @@ paths:
           in: query
           schema:
             type: string
+          example: Bikash
       responses:
         '200':
           description: Successful response
@@ -4084,16 +4076,6 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /basicinfo:
-    get:
-      tags:
-        - front-apis > home
-      summary: basicinfo
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
   /aboutpage:
     get:
       tags:
@@ -4104,21 +4086,58 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /contact_page:
-    get:
+  /contact-enquiry:
+    post:
       tags:
         - front-apis > home
-      summary: contactpage
+      summary: contact enquiry
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: name1
+                email:
+                  type: string
+                  example: a@b.com
+                subject:
+                  type: string
+                  example: sdfghngdfgdfgdfg  dgfg
+                description:
+                  type: string
+                  example: sadf  dfsa  sdfa dfsa  sfda sd
+      security:
+        - noauthAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
       responses:
         '200':
           description: Successful response
           content:
             application/json: {}
   /booking/search/available-rooms:
-    get:
+    post:
       tags:
         - front-apis > booking
       summary: list available rooms
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                occupancy:
+                  - no_of_adult: 5
+                    no_of_child: 6
+                  - no_of_adult: 10
+                    no_of_child: 0
       security:
         - noauthAuth: []
       parameters:
@@ -4149,16 +4168,6 @@ paths:
           schema:
             type: string
           example: '2023-08-30'
-        - name: no_of_adult
-          in: query
-          schema:
-            type: integer
-          example: '4'
-        - name: no_of_child
-          in: query
-          schema:
-            type: integer
-          example: '2'
       responses:
         '200':
           description: Successful response
@@ -4300,7 +4309,137 @@ paths:
           schema:
             type: integer
           required: true
-          example: '29'
+          example: '7'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /album:
+    get:
+      tags:
+        - front-apis > album
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /album/{id}:
+    get:
+      tags:
+        - front-apis > album
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '3'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /gallery/{album_id}:
+    get:
+      tags:
+        - front-apis > gallery
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+        - name: album_id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '8'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /gallery/{album_id}/{id}:
+    get:
+      tags:
+        - front-apis > gallery
+      summary: show
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: album_id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /dininginfo:
+    get:
+      tags:
+        - front-apis > dining
+      summary: get
       responses:
         '200':
           description: Successful response

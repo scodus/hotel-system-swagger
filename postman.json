@@ -3694,7 +3694,8 @@
 										{
 											"key": "cleaning_check_list_id[]",
 											"value": "2",
-											"type": "text"
+											"type": "text",
+											"disabled": true
 										}
 									]
 								},
@@ -4913,6 +4914,60 @@
 							"response": []
 						},
 						{
+							"name": "dining section",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "dining_name",
+											"value": "offer 1 up",
+											"type": "text"
+										},
+										{
+											"key": "dining_description",
+											"value": "asdfghj gfhj",
+											"type": "text"
+										},
+										{
+											"key": "dining_image",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/1.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/site-setting-dining-section",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"site-setting-dining-section"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "site setting list",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -5341,6 +5396,68 @@
 									"path": [
 										"admin",
 										"site-setting-message-section"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "dining  section",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "welcome_message_headperson_name",
+											"value": "offer 1 up",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_headperson_designation",
+											"value": "post",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_description",
+											"value": "asdfghj gfhj",
+											"type": "text"
+										},
+										{
+											"key": "welcome_message_headperson_signature",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/QRDown.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/site-setting-dining-section",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"site-setting-dining-section"
 									]
 								}
 							},
@@ -6561,130 +6678,6 @@
 								}
 							},
 							"response": []
-						},
-						{
-							"name": "store",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "name",
-											"value": "name1",
-											"type": "text"
-										},
-										{
-											"key": "email",
-											"value": "a@b.com",
-											"type": "text"
-										},
-										{
-											"key": "subject",
-											"value": "sdfghngdfgdfgdfg  dgfg",
-											"type": "text"
-										},
-										{
-											"key": "description",
-											"value": "sadf  dfsa  sdfa dfsa  sfda sd",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/admin/contact-enquiry",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"contact-enquiry"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "update",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "_method",
-											"value": "patch",
-											"type": "text"
-										},
-										{
-											"key": "name",
-											"value": "name1",
-											"type": "text"
-										},
-										{
-											"key": "email",
-											"value": "a@b.com",
-											"type": "text"
-										},
-										{
-											"key": "subject",
-											"value": "sdfghngdfgdfgdfg  dgfg",
-											"type": "text"
-										},
-										{
-											"key": "description",
-											"value": "sadf  dfsa  sdfa dfsa  sfda sd",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/admin/contact-enquiry/:id",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"contact-enquiry",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "1"
-										}
-									]
-								}
-							},
-							"response": []
 						}
 					]
 				},
@@ -7472,12 +7465,12 @@
 									"formdata": [
 										{
 											"key": "check_in",
-											"value": "2023-08-29",
+											"value": "2023-09-30",
 											"type": "text"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-08-29",
+											"value": "2023-09-30",
 											"type": "text"
 										},
 										{
@@ -7578,6 +7571,16 @@
 											"key": "id_card[1][image]",
 											"type": "file",
 											"src": []
+										},
+										{
+											"key": "no_of_adult",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "no_of_child",
+											"value": "1",
+											"type": "text"
 										}
 									]
 								},
@@ -7667,57 +7670,6 @@
 							"response": []
 						},
 						{
-							"name": "update",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "_method",
-											"value": "patch",
-											"type": "text"
-										},
-										{
-											"key": "paid",
-											"value": "90",
-											"type": "text",
-											"disabled": true
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/admin/booking/:id",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"booking",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "10011"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "payment store",
 							"request": {
 								"auth": {
@@ -7772,6 +7724,93 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text"
+										},
+										{
+											"key": "paid",
+											"value": "90",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/booking/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"booking",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "10011"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "status checkin",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/booking/:id/status-checkin",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"booking",
+										":id",
+										"status-checkin"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "10015"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -7806,7 +7845,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/admin/payment?paginate=1&page=&limit=&search_keyword=",
+									"raw": "{{url}}/admin/payment?paginate=1&page=&limit=&search_keyword=Bikash",
 									"host": [
 										"{{url}}"
 									],
@@ -7829,7 +7868,7 @@
 										},
 										{
 											"key": "search_keyword",
-											"value": ""
+											"value": "Bikash"
 										}
 									]
 								}
@@ -7864,23 +7903,6 @@
 							"response": []
 						},
 						{
-							"name": "basicinfo",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{url}}/basicinfo",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"basicinfo"
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "aboutpage",
 							"request": {
 								"method": "GET",
@@ -7898,17 +7920,51 @@
 							"response": []
 						},
 						{
-							"name": "contactpage",
+							"name": "contact enquiry",
 							"request": {
-								"method": "GET",
-								"header": [],
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "name1",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "a@b.com",
+											"type": "text"
+										},
+										{
+											"key": "subject",
+											"value": "sdfghngdfgdfgdfg  dgfg",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "sadf  dfsa  sdfa dfsa  sfda sd",
+											"type": "text"
+										}
+									]
+								},
 								"url": {
-									"raw": "{{url}}/contact_page",
+									"raw": "{{url}}/contact-enquiry",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"contact_page"
+										"contact-enquiry"
 									]
 								}
 							},
@@ -7921,18 +7977,15 @@
 					"item": [
 						{
 							"name": "list available rooms",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"auth": {
 									"type": "noauth"
 								},
-								"method": "GET",
+								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "",
+									"raw": "{\r\n    \"occupancy\": [\r\n        {\r\n            \"no_of_adult\": 5,\r\n            \"no_of_child\": 6\r\n        },\r\n        {\r\n            \"no_of_adult\": 10,\r\n            \"no_of_child\": 0\r\n        }\r\n    ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -7940,7 +7993,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/booking/search/available-rooms?paginate=1&page=&limit=&search_keyword=&check_in=2023-08-30&check_out=2023-08-30&no_of_adult=4&no_of_child=2",
+									"raw": "{{url}}/booking/search/available-rooms?paginate=1&page=&limit=&search_keyword=&check_in=2023-08-30&check_out=2023-08-30",
 									"host": [
 										"{{url}}"
 									],
@@ -7976,11 +8029,48 @@
 										},
 										{
 											"key": "no_of_adult",
-											"value": "4"
+											"value": "15",
+											"disabled": true
 										},
 										{
 											"key": "no_of_child",
-											"value": "2"
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "occupancy[0][no_of_adult]",
+											"value": "10",
+											"disabled": true
+										},
+										{
+											"key": "occupancy[0][no_of_child]",
+											"value": "5",
+											"disabled": true
+										},
+										{
+											"key": "occupancy[1][no_of_adult]",
+											"value": "4",
+											"disabled": true
+										},
+										{
+											"key": "occupancy[1][no_of_child]",
+											"value": "2",
+											"disabled": true
+										},
+										{
+											"key": "occupancy[]",
+											"value": " {\"no_of_adult\":1,\"no_of_child\":0,\"id\":\"0.5509127987338422\"}",
+											"disabled": true
+										},
+										{
+											"key": "occupancy[]",
+											"value": " {\"no_of_adult\":1,\"no_of_child\":0,\"id\":\"0.9310475716150279\"}",
+											"disabled": true
+										},
+										{
+											"key": "occupancy",
+											"value": " [{\"no_of_adult\":1,\"no_of_child\":0,\"id\":\"0.5394610486801756\"}]",
+											"disabled": true
 										}
 									]
 								}
@@ -8235,8 +8325,260 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "29"
+											"value": "7"
 										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "album",
+					"item": [
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/album?paginate=1&page=&limit=&search_keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"album"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/album/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"album",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "gallery",
+					"item": [
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/gallery/:album_id?paginate=1&page=&limit=&search_keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"gallery",
+										":album_id"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										}
+									],
+									"variable": [
+										{
+											"key": "album_id",
+											"value": "8"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "show",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/gallery/:album_id/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"gallery",
+										":album_id",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "album_id",
+											"value": "1"
+										},
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "dining",
+					"item": [
+						{
+							"name": "get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/dininginfo",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"dininginfo"
 									]
 								}
 							},
