@@ -4651,7 +4651,12 @@
 										{
 											"key": "welcome_message_headperson_signature",
 											"type": "file",
-											"src": "/C:/Users/August/Downloads/QRDown.png"
+											"src": "/C:/Users/August/Downloads/Compressed/test-images/2.png"
+										},
+										{
+											"key": "welcome_image",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/call.png"
 										}
 									]
 								},
@@ -7869,6 +7874,61 @@
 										{
 											"key": "search_keyword",
 											"value": "Bikash"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "dashboard",
+					"item": [
+						{
+							"name": "dashboard",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/dashboard",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"dashboard"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "page",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "",
+											"disabled": true
+										},
+										{
+											"key": "search_keyword",
+											"value": "",
+											"disabled": true
 										}
 									]
 								}

@@ -48,6 +48,7 @@ tags:
   - name: admin > roster-task-time-employee, roster-floor-plan-date
   - name: admin > Booking
   - name: admin > payment
+  - name: admin > dashboard
   - name: front-apis
   - name: front-apis > home
   - name: front-apis > booking
@@ -2487,6 +2488,9 @@ paths:
                 welcome_message_headperson_signature:
                   type: string
                   format: binary
+                welcome_image:
+                  type: string
+                  format: binary
       security:
         - bearerAuth: []
       responses:
@@ -4061,6 +4065,18 @@ paths:
           schema:
             type: string
           example: Bikash
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/dashboard:
+    get:
+      tags:
+        - admin > dashboard
+      summary: dashboard
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: Successful response
