@@ -823,7 +823,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '2'
+          example: '22'
       responses:
         '200':
           description: Successful response
@@ -846,7 +846,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '2'
+          example: '11'
       responses:
         '200':
           description: Successful response
@@ -1093,7 +1093,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '16'
+          example: '9'
       responses:
         '200':
           description: Successful response
@@ -1116,7 +1116,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '29'
+          example: '9'
       responses:
         '200':
           description: Successful response
@@ -2488,9 +2488,6 @@ paths:
                 welcome_message_headperson_signature:
                   type: string
                   format: binary
-                welcome_image:
-                  type: string
-                  format: binary
       security:
         - bearerAuth: []
       responses:
@@ -2681,6 +2678,9 @@ paths:
                 message_why_choose_us:
                   type: string
                   example: offer 1 up
+                message_image:
+                  type: string
+                  format: binary
       security:
         - bearerAuth: []
       responses:

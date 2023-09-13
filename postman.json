@@ -1348,7 +1348,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "2"
+											"value": "22"
 										}
 									]
 								}
@@ -1393,7 +1393,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "2"
+											"value": "11"
 										}
 									]
 								}
@@ -1925,7 +1925,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "16"
+											"value": "9"
 										}
 									]
 								}
@@ -2031,7 +2031,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "29"
+											"value": "9"
 										}
 									]
 								}
@@ -4651,12 +4651,7 @@
 										{
 											"key": "welcome_message_headperson_signature",
 											"type": "file",
-											"src": "/C:/Users/August/Downloads/Compressed/test-images/2.png"
-										},
-										{
-											"key": "welcome_image",
-											"type": "file",
-											"src": "/C:/Users/August/Downloads/call.png"
+											"src": "/C:/Users/August/Downloads/QRDown.png"
 										}
 									]
 								},
@@ -4902,6 +4897,11 @@
 											"key": "message_why_choose_us",
 											"value": "offer 1 up",
 											"type": "text"
+										},
+										{
+											"key": "message_image",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/web-master/defframe.png"
 										}
 									]
 								},
