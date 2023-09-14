@@ -824,7 +824,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '22'
+          example: '11'
       responses:
         '200':
           description: Successful response
@@ -1008,7 +1008,7 @@ paths:
                   example: PATCH
                 title:
                   type: string
-                  example: title 2
+                  example: title 2000
                 description:
                   type: integer
                   example: '2'
@@ -1056,7 +1056,7 @@ paths:
                   example: '20'
                 room_id[]:
                   type: integer
-                  example: '15'
+                  example: '11'
                 amenity_id[]:
                   type: integer
                   example: '2'
@@ -1071,7 +1071,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '9'
+          example: '31'
       responses:
         '200':
           description: Successful response
@@ -2285,8 +2285,8 @@ paths:
                   type: string
                   example: patch
                 title:
-                  type: integer
-                  example: '7'
+                  type: string
+                  example: '14:00:00'
                 status:
                   type: string
                   example: inactive
@@ -2702,6 +2702,12 @@ paths:
                 dining_image:
                   type: string
                   format: binary
+                dining_banner_title:
+                  type: string
+                  example: sdf
+                dining_banner_image:
+                  type: string
+                  format: binary
       security:
         - bearerAuth: []
       responses:
@@ -2720,33 +2726,21 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /admin/site-setting-other-banner-section:
+  /admin/site-setting-gallery-banner-section:
     post:
       tags:
         - admin > site  setting
-      summary: other banner section
+      summary: gallery banner section
       requestBody:
         content:
           multipart/form-data:
             schema:
               type: object
               properties:
-                gallery_banner_title:
-                  type: string
-                  example: Images Gallery
-                gallery_banner_image:
-                  type: string
-                  format: binary
                 contact_banner_title:
                   type: string
                   example: Contact
                 contact_banner_image:
-                  type: string
-                  format: binary
-                dining_banner_title:
-                  type: string
-                  example: Restaurant
-                dining_banner_image:
                   type: string
                   format: binary
       security:
@@ -2759,7 +2753,42 @@ paths:
     get:
       tags:
         - admin > site  setting
-      summary: other banner section
+      summary: gallery banner section
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/site-setting-contact-banner-section:
+    post:
+      tags:
+        - admin > site  setting
+      summary: contact banner section
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                contact_banner_title:
+                  type: string
+                  example: Contact
+                contact_banner_image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > site  setting
+      summary: contact banner section
       security:
         - bearerAuth: []
       responses:
@@ -4129,6 +4158,16 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /dininginfo:
+    get:
+      tags:
+        - front-apis > dining
+      summary: get
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /other-banner:
     get:
       tags:
@@ -4483,16 +4522,6 @@ paths:
             type: integer
           required: true
           example: '1'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /dininginfo:
-    get:
-      tags:
-        - front-apis > dining
-      summary: get
       responses:
         '200':
           description: Successful response

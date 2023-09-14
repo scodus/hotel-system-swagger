@@ -1348,7 +1348,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "22"
+											"value": "11"
 										}
 									]
 								}
@@ -1760,7 +1760,7 @@
 										},
 										{
 											"key": "title",
-											"value": "title 2",
+											"value": "title 2000",
 											"type": "text"
 										},
 										{
@@ -1845,7 +1845,7 @@
 										},
 										{
 											"key": "room_id[]",
-											"value": "15",
+											"value": "11",
 											"type": "text"
 										},
 										{
@@ -1880,7 +1880,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "9"
+											"value": "31"
 										}
 									]
 								}
@@ -4213,7 +4213,7 @@
 										},
 										{
 											"key": "title",
-											"value": "7",
+											"value": "14:00:00",
 											"type": "text"
 										},
 										{
@@ -4914,6 +4914,16 @@
 											"key": "dining_image",
 											"type": "file",
 											"src": "/C:/Users/August/Downloads/1.jpeg"
+										},
+										{
+											"key": "dining_banner_title",
+											"value": "sdf",
+											"type": "text"
+										},
+										{
+											"key": "dining_banner_image",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/2.jpeg"
 										}
 									]
 								},
@@ -4931,7 +4941,7 @@
 							"response": []
 						},
 						{
-							"name": "other banner section",
+							"name": "gallery banner section",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -4949,15 +4959,48 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "gallery_banner_title",
-											"value": "Images Gallery",
+											"key": "contact_banner_title",
+											"value": "Contact",
 											"type": "text"
 										},
 										{
-											"key": "gallery_banner_image",
+											"key": "contact_banner_image",
 											"type": "file",
-											"src": "/C:/Users/August/Downloads/call.png"
-										},
+											"src": "/C:/Users/August/Downloads/2.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/site-setting-gallery-banner-section",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"site-setting-gallery-banner-section"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "contact banner section",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
 										{
 											"key": "contact_banner_title",
 											"value": "Contact",
@@ -4967,27 +5010,17 @@
 											"key": "contact_banner_image",
 											"type": "file",
 											"src": "/C:/Users/August/Downloads/1.jpeg"
-										},
-										{
-											"key": "dining_banner_title",
-											"value": "Restaurant",
-											"type": "text"
-										},
-										{
-											"key": "dining_banner_image",
-											"type": "file",
-											"src": "/C:/Users/August/Downloads/2.jpeg"
 										}
 									]
 								},
 								"url": {
-									"raw": "{{url}}/admin/site-setting-other-banner-section",
+									"raw": "{{url}}/admin/site-setting-contact-banner-section",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
-										"site-setting-other-banner-section"
+										"site-setting-contact-banner-section"
 									]
 								}
 							},
@@ -5490,7 +5523,7 @@
 							"response": []
 						},
 						{
-							"name": "other banner section",
+							"name": "gallery banner section",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -5505,13 +5538,41 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{url}}/admin/site-setting-other-banner-section",
+									"raw": "{{url}}/admin/site-setting-gallery-banner-section",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"admin",
-										"site-setting-other-banner-section"
+										"site-setting-gallery-banner-section"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "contact banner section",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/site-setting-contact-banner-section",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"site-setting-contact-banner-section"
 									]
 								}
 							},
@@ -8023,6 +8084,23 @@
 									],
 									"path": [
 										"aboutpage"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "dininginfo",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/dininginfo",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"dininginfo"
 									]
 								}
 							},
