@@ -4628,12 +4628,6 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "_method",
-											"value": "patch",
-											"type": "text",
-											"disabled": true
-										},
-										{
 											"key": "welcome_message_headperson_name",
 											"value": "offer 1",
 											"type": "text"
@@ -4687,12 +4681,6 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "_method",
-											"value": "patch",
-											"type": "text",
-											"disabled": true
-										},
-										{
 											"key": "deals_name",
 											"value": "offer 1 up",
 											"type": "text"
@@ -4741,12 +4729,6 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "_method",
-											"value": "patch",
-											"type": "text",
-											"disabled": true
-										},
-										{
 											"key": "rooms_text",
 											"value": "offer 1 up",
 											"type": "text"
@@ -4784,12 +4766,6 @@
 								"body": {
 									"mode": "formdata",
 									"formdata": [
-										{
-											"key": "_method",
-											"value": "patch",
-											"type": "text",
-											"disabled": true
-										},
 										{
 											"key": "special_offer_title",
 											"value": "offer 1 up",
@@ -4834,12 +4810,6 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "_method",
-											"value": "patch",
-											"type": "text",
-											"disabled": true
-										},
-										{
 											"key": "about_banner_title",
 											"value": "offer 1 up",
 											"type": "text"
@@ -4882,12 +4852,6 @@
 								"body": {
 									"mode": "formdata",
 									"formdata": [
-										{
-											"key": "_method",
-											"value": "patch",
-											"type": "text",
-											"disabled": true
-										},
 										{
 											"key": "message_overview",
 											"value": "post",
@@ -4937,12 +4901,6 @@
 									"mode": "formdata",
 									"formdata": [
 										{
-											"key": "_method",
-											"value": "patch",
-											"type": "text",
-											"disabled": true
-										},
-										{
 											"key": "dining_name",
 											"value": "offer 1 up",
 											"type": "text"
@@ -4990,13 +4948,6 @@
 								"body": {
 									"mode": "formdata",
 									"formdata": [
-										{
-											"key": "_method",
-											"value": "patch",
-											"description": "gallery",
-											"type": "text",
-											"disabled": true
-										},
 										{
 											"key": "gallery_banner_title",
 											"value": "Images Gallery",

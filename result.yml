@@ -2474,9 +2474,6 @@ paths:
             schema:
               type: object
               properties:
-                _method:
-                  type: string
-                  example: patch
                 welcome_message_headperson_name:
                   type: string
                   example: offer 1
@@ -2518,9 +2515,6 @@ paths:
             schema:
               type: object
               properties:
-                _method:
-                  type: string
-                  example: patch
                 deals_name:
                   type: string
                   example: offer 1 up
@@ -2559,9 +2553,6 @@ paths:
             schema:
               type: object
               properties:
-                _method:
-                  type: string
-                  example: patch
                 rooms_text:
                   type: string
                   example: offer 1 up
@@ -2594,9 +2585,6 @@ paths:
             schema:
               type: object
               properties:
-                _method:
-                  type: string
-                  example: patch
                 special_offer_title:
                   type: string
                   example: offer 1 up
@@ -2632,9 +2620,6 @@ paths:
             schema:
               type: object
               properties:
-                _method:
-                  type: string
-                  example: patch
                 about_banner_title:
                   type: string
                   example: offer 1 up
@@ -2670,9 +2655,6 @@ paths:
             schema:
               type: object
               properties:
-                _method:
-                  type: string
-                  example: patch
                 message_overview:
                   type: string
                   example: post
@@ -2711,9 +2693,6 @@ paths:
             schema:
               type: object
               properties:
-                _method:
-                  type: string
-                  example: patch
                 dining_name:
                   type: string
                   example: offer 1 up
@@ -2752,10 +2731,6 @@ paths:
             schema:
               type: object
               properties:
-                _method:
-                  type: string
-                  description: gallery
-                  example: patch
                 gallery_banner_title:
                   type: string
                   example: Images Gallery
