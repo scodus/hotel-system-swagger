@@ -703,7 +703,7 @@ paths:
               properties:
                 title:
                   type: string
-                  example: title 1
+                  example: title 100
                 description:
                   type: string
                   example: des 1
@@ -812,7 +812,8 @@ paths:
                   type: string
                   example: inactive
                 room_type_id:
-                  type: string
+                  type: integer
+                  example: '31'
                 floor_type_id:
                   type: string
       security:
@@ -846,7 +847,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '11'
+          example: '22'
       responses:
         '200':
           description: Successful response
@@ -869,7 +870,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '2'
+          example: '22'
       responses:
         '200':
           description: Successful response
@@ -888,7 +889,7 @@ paths:
               properties:
                 title:
                   type: string
-                  example: title 2
+                  example: title 200
                 description:
                   type: integer
                   example: '2'
@@ -1093,7 +1094,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '9'
+          example: '31'
       responses:
         '200':
           description: Successful response
@@ -1135,7 +1136,7 @@ paths:
               properties:
                 title:
                   type: string
-                  example: floor 2
+                  example: floor 20
                 description:
                   type: integer
                   example: '2'
@@ -1144,7 +1145,7 @@ paths:
                   example: active
                 room_id[]:
                   type: integer
-                  example: '16'
+                  example: '22'
       security:
         - bearerAuth: []
       parameters:
@@ -1243,7 +1244,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '1'
+          example: '11'
       responses:
         '200':
           description: Successful response
@@ -2740,6 +2741,57 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /admin/site-setting-other-banner-section:
+    post:
+      tags:
+        - admin > site  setting
+      summary: other banner section
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  description: gallery
+                  example: patch
+                gallery_banner_title:
+                  type: string
+                  example: Images Gallery
+                gallery_banner_image:
+                  type: string
+                  format: binary
+                contact_banner_title:
+                  type: string
+                  example: Contact
+                contact_banner_image:
+                  type: string
+                  format: binary
+                dining_banner_title:
+                  type: string
+                  example: Restaurant
+                dining_banner_image:
+                  type: string
+                  format: binary
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - admin > site  setting
+      summary: other banner section
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /admin/site-setting-list:
     get:
       tags:
@@ -4097,6 +4149,16 @@ paths:
       tags:
         - front-apis > home
       summary: aboutpage
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /other-banner:
+    get:
+      tags:
+        - front-apis > home
+      summary: other banner
       responses:
         '200':
           description: Successful response

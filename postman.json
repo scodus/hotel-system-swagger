@@ -1203,7 +1203,7 @@
 									"formdata": [
 										{
 											"key": "title",
-											"value": "title 1",
+											"value": "title 100",
 											"type": "text"
 										},
 										{
@@ -1325,7 +1325,7 @@
 										},
 										{
 											"key": "room_type_id",
-											"value": "",
+											"value": "31",
 											"type": "text"
 										},
 										{
@@ -1393,7 +1393,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "11"
+											"value": "22"
 										}
 									]
 								}
@@ -1561,7 +1561,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "2"
+											"value": "22"
 										}
 									]
 								}
@@ -1599,7 +1599,7 @@
 									"formdata": [
 										{
 											"key": "title",
-											"value": "title 2",
+											"value": "title 200",
 											"type": "text"
 										},
 										{
@@ -1696,7 +1696,7 @@
 										},
 										{
 											"key": "room_id[]",
-											"value": "19",
+											"value": "22",
 											"type": "text"
 										},
 										{
@@ -1718,7 +1718,7 @@
 										{
 											"key": "images[]",
 											"type": "file",
-											"src": "/C:/Users/August/Downloads/QRDown.png"
+											"src": "/C:/Users/August/Downloads/1.jpeg"
 										}
 									]
 								},
@@ -1925,7 +1925,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "9"
+											"value": "31"
 										}
 									]
 								}
@@ -2069,7 +2069,7 @@
 									"formdata": [
 										{
 											"key": "title",
-											"value": "floor 2",
+											"value": "floor 20",
 											"type": "text"
 										},
 										{
@@ -2086,7 +2086,7 @@
 										},
 										{
 											"key": "room_id[]",
-											"value": "16",
+											"value": "22",
 											"type": "text"
 										}
 									]
@@ -2214,7 +2214,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "1"
+											"value": "11"
 										}
 									]
 								}
@@ -4973,6 +4973,76 @@
 							"response": []
 						},
 						{
+							"name": "other banner section",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"description": "gallery",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "gallery_banner_title",
+											"value": "Images Gallery",
+											"type": "text"
+										},
+										{
+											"key": "gallery_banner_image",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/call.png"
+										},
+										{
+											"key": "contact_banner_title",
+											"value": "Contact",
+											"type": "text"
+										},
+										{
+											"key": "contact_banner_image",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/1.jpeg"
+										},
+										{
+											"key": "dining_banner_title",
+											"value": "Restaurant",
+											"type": "text"
+										},
+										{
+											"key": "dining_banner_image",
+											"type": "file",
+											"src": "/C:/Users/August/Downloads/2.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/site-setting-other-banner-section",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"site-setting-other-banner-section"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "site setting list",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
@@ -5463,6 +5533,34 @@
 									"path": [
 										"admin",
 										"site-setting-dining-section"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "other banner section",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/admin/site-setting-other-banner-section",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"site-setting-other-banner-section"
 									]
 								}
 							},
@@ -7974,6 +8072,23 @@
 									],
 									"path": [
 										"aboutpage"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "other banner",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/other-banner",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"other-banner"
 									]
 								}
 							},
