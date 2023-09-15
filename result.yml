@@ -889,7 +889,7 @@ paths:
               properties:
                 title:
                   type: string
-                  example: title 200
+                  example: title 2000
                 description:
                   type: integer
                   example: '2'
@@ -3852,6 +3852,17 @@ paths:
           in: query
           schema:
             type: string
+          example: Sir
+        - name: check_in
+          in: query
+          schema:
+            type: string
+          example: '2023-09-30'
+        - name: check_out
+          in: query
+          schema:
+            type: string
+          example: '2023-09-30'
       responses:
         '200':
           description: Successful response
