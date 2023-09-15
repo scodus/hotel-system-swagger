@@ -4148,6 +4148,16 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /site-setting:
+    get:
+      tags:
+        - front-apis > home
+      summary: site-setting-all
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /aboutpage:
     get:
       tags:
@@ -4278,10 +4288,10 @@ paths:
               properties:
                 check_in:
                   type: string
-                  example: '2023-08-30'
+                  example: '2023-09-30'
                 check_out:
                   type: string
-                  example: '2023-08-30'
+                  example: '2023-09-30'
                 name:
                   type: string
                   example: Sirjeet Tamrakaar
@@ -4296,13 +4306,7 @@ paths:
                   example: kapur
                 room_id[]:
                   type: integer
-                  example: '12'
-                amount:
-                  type: integer
-                  example: '100'
-                discount:
-                  type: integer
-                  example: '10'
+                  example: '18'
                 gender:
                   type: string
                   example: male

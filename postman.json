@@ -7622,7 +7622,7 @@
 										},
 										{
 											"key": "room_id[]",
-											"value": "11",
+											"value": "15",
 											"type": "text"
 										},
 										{
@@ -8073,6 +8073,23 @@
 							"response": []
 						},
 						{
+							"name": "site-setting-all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/site-setting",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"site-setting"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "aboutpage",
 							"request": {
 								"method": "GET",
@@ -8230,51 +8247,6 @@
 										{
 											"key": "check_out",
 											"value": "2023-09-30"
-										},
-										{
-											"key": "no_of_adult",
-											"value": "15",
-											"disabled": true
-										},
-										{
-											"key": "no_of_child",
-											"value": "2",
-											"disabled": true
-										},
-										{
-											"key": "occupancy[0][no_of_adult]",
-											"value": "10",
-											"disabled": true
-										},
-										{
-											"key": "occupancy[0][no_of_child]",
-											"value": "5",
-											"disabled": true
-										},
-										{
-											"key": "occupancy[1][no_of_adult]",
-											"value": "4",
-											"disabled": true
-										},
-										{
-											"key": "occupancy[1][no_of_child]",
-											"value": "2",
-											"disabled": true
-										},
-										{
-											"key": "occupancy[]",
-											"value": " {\"no_of_adult\":1,\"no_of_child\":0,\"id\":\"0.5509127987338422\"}",
-											"disabled": true
-										},
-										{
-											"key": "occupancy[]",
-											"value": " {\"no_of_adult\":1,\"no_of_child\":0,\"id\":\"0.9310475716150279\"}",
-											"disabled": true
-										},
-										{
-											"key": "occupancy",
-											"value": " [{\"no_of_adult\":1,\"no_of_child\":0,\"id\":\"0.5394610486801756\"}]",
-											"disabled": true
 										}
 									]
 								}
@@ -8307,12 +8279,12 @@
 									"formdata": [
 										{
 											"key": "check_in",
-											"value": "2023-08-30",
+											"value": "2023-09-30",
 											"type": "text"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-08-30",
+											"value": "2023-09-30",
 											"type": "text"
 										},
 										{
@@ -8337,23 +8309,12 @@
 										},
 										{
 											"key": "room_id[]",
-											"value": "13",
+											"value": "17",
 											"type": "text"
 										},
 										{
 											"key": "room_id[]",
-											"value": "12",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "amount",
-											"value": "100",
-											"type": "text"
-										},
-										{
-											"key": "discount",
-											"value": "10",
+											"value": "18",
 											"type": "text"
 										},
 										{
