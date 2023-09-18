@@ -8205,7 +8205,7 @@
 					"name": "booking",
 					"item": [
 						{
-							"name": "list available rooms",
+							"name": "list available room types",
 							"request": {
 								"auth": {
 									"type": "noauth"
@@ -8222,14 +8222,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/booking/search/available-rooms?paginate=1&page=&limit=&search_keyword=&check_in=2023-09-30&check_out=2023-09-30",
+									"raw": "{{url}}/booking/search/available-room-types?paginate=1&page=&limit=&search_keyword=&check_in=2023-10-30&check_out=2023-10-30&rooms_count=2",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"booking",
 										"search",
-										"available-rooms"
+										"available-room-types"
 									],
 									"query": [
 										{
@@ -8250,11 +8250,15 @@
 										},
 										{
 											"key": "check_in",
-											"value": "2023-09-30"
+											"value": "2023-10-30"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-09-30"
+											"value": "2023-10-30"
+										},
+										{
+											"key": "rooms_count",
+											"value": "2"
 										}
 									]
 								}
@@ -8316,17 +8320,6 @@
 											"type": "text"
 										},
 										{
-											"key": "room_id[]",
-											"value": "2",
-											"type": "text"
-										},
-										{
-											"key": "room_id[]",
-											"value": "18",
-											"type": "text",
-											"disabled": true
-										},
-										{
 											"key": "gender",
 											"value": "male",
 											"type": "text"
@@ -8381,6 +8374,22 @@
 											"key": "no_of_child",
 											"value": "0",
 											"type": "text"
+										},
+										{
+											"key": "room_type_id",
+											"value": "9",
+											"type": "text"
+										},
+										{
+											"key": "room_count",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "room_id[]",
+											"value": "",
+											"type": "text",
+											"disabled": true
 										}
 									]
 								},

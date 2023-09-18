@@ -4235,11 +4235,11 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /booking/search/available-rooms:
+  /booking/search/available-room-types:
     post:
       tags:
         - front-apis > booking
-      summary: list available rooms
+      summary: list available room types
       requestBody:
         content:
           application/json:
@@ -4275,12 +4275,17 @@ paths:
           in: query
           schema:
             type: string
-          example: '2023-09-30'
+          example: '2023-10-30'
         - name: check_out
           in: query
           schema:
             type: string
-          example: '2023-09-30'
+          example: '2023-10-30'
+        - name: rooms_count
+          in: query
+          schema:
+            type: integer
+          example: '2'
       responses:
         '200':
           description: Successful response
@@ -4315,9 +4320,6 @@ paths:
                 address:
                   type: string
                   example: kapur
-                room_id[]:
-                  type: integer
-                  example: '18'
                 gender:
                   type: string
                   example: male
@@ -4355,6 +4357,14 @@ paths:
                 no_of_child:
                   type: integer
                   example: '0'
+                room_type_id:
+                  type: integer
+                  example: '9'
+                room_count:
+                  type: integer
+                  example: '2'
+                room_id[]:
+                  type: string
       security:
         - bearerAuth: []
       parameters:
