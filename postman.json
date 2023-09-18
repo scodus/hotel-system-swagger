@@ -8291,12 +8291,12 @@
 									"formdata": [
 										{
 											"key": "check_in",
-											"value": "2023-09-30",
+											"value": "2023-10-30",
 											"type": "text"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-09-30",
+											"value": "2023-10-31",
 											"type": "text"
 										},
 										{
@@ -8377,19 +8377,13 @@
 										},
 										{
 											"key": "room_type_id",
-											"value": "9",
+											"value": "16",
 											"type": "text"
 										},
 										{
 											"key": "rooms_count",
 											"value": "2",
 											"type": "text"
-										},
-										{
-											"key": "room_id[]",
-											"value": "",
-											"type": "text",
-											"disabled": true
 										}
 									]
 								},

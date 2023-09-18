@@ -4304,10 +4304,10 @@ paths:
               properties:
                 check_in:
                   type: string
-                  example: '2023-09-30'
+                  example: '2023-10-30'
                 check_out:
                   type: string
-                  example: '2023-09-30'
+                  example: '2023-10-31'
                 name:
                   type: string
                   example: Sirjeet Tamrakaar
@@ -4359,12 +4359,10 @@ paths:
                   example: '0'
                 room_type_id:
                   type: integer
-                  example: '9'
+                  example: '16'
                 rooms_count:
                   type: integer
                   example: '2'
-                room_id[]:
-                  type: string
       security:
         - bearerAuth: []
       parameters:
