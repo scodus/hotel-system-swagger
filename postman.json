@@ -8214,7 +8214,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"occupancy\": [\r\n        {\r\n            \"no_of_adult\": 15,\r\n            \"no_of_child\": 2\r\n        },\r\n        {\r\n            \"no_of_adult\": 4,\r\n            \"no_of_child\": 1\r\n        }\r\n    ]\r\n}",
+									"raw": "{\r\n    \"occupancy\": [\r\n        {\r\n            \"no_of_adult\": 2,\r\n            \"no_of_child\": 1\r\n        },\r\n        {\r\n            \"no_of_adult\": 4,\r\n            \"no_of_child\": 1\r\n        }\r\n    ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -8381,7 +8381,7 @@
 											"type": "text"
 										},
 										{
-											"key": "room_count",
+											"key": "rooms_count",
 											"value": "2",
 											"type": "text"
 										},

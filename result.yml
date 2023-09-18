@@ -4247,8 +4247,8 @@ paths:
               type: object
               example:
                 occupancy:
-                  - no_of_adult: 15
-                    no_of_child: 2
+                  - no_of_adult: 2
+                    no_of_child: 1
                   - no_of_adult: 4
                     no_of_child: 1
       security:
@@ -4360,7 +4360,7 @@ paths:
                 room_type_id:
                   type: integer
                   example: '9'
-                room_count:
+                rooms_count:
                   type: integer
                   example: '2'
                 room_id[]:
