@@ -48,6 +48,7 @@ tags:
   - name: admin > roster-task-time-employee, roster-floor-plan-date
   - name: admin > Booking
   - name: admin > payment
+  - name: admin > booking-additional-bills
   - name: admin > dashboard
   - name: front-apis
   - name: front-apis > home
@@ -552,7 +553,7 @@ paths:
               properties:
                 title:
                   type: string
-                  example: amenity title2
+                  example: amenity title3
                 description:
                   type: string
                   example: amenity description
@@ -702,8 +703,8 @@ paths:
               type: object
               properties:
                 title:
-                  type: string
-                  example: title 100
+                  type: integer
+                  example: '500'
                 description:
                   type: string
                   example: des 1
@@ -773,8 +774,8 @@ paths:
               type: object
               example:
                 title:
-                  - 10s
-                  - 2s
+                  - 105
+                  - 106
       security:
         - bearerAuth: []
       parameters:
@@ -813,7 +814,7 @@ paths:
                   example: inactive
                 room_type_id:
                   type: integer
-                  example: '31'
+                  example: '5'
                 floor_type_id:
                   type: string
       security:
@@ -824,7 +825,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '11'
+          example: '2'
       responses:
         '200':
           description: Successful response
@@ -889,35 +890,34 @@ paths:
               properties:
                 title:
                   type: string
-                  example: title 2000
+                  example: Premium
                 description:
-                  type: integer
-                  example: '2'
+                  type: string
+                  example: 2sp
                 max_occupancy:
                   type: integer
-                  example: '06'
+                  example: '15'
                 no_of_adult:
                   type: integer
-                  example: '04'
+                  example: '10'
                 no_of_child:
                   type: integer
-                  example: '02'
+                  example: '05'
                 base_price:
                   type: integer
                   example: '100'
                 offer_price:
                   type: integer
                   example: '25'
-                discount_percent:
-                  type: integer
-                  example: '10'
                 tax_status:
                   type: integer
                   example: '0'
                 start_date:
                   type: string
+                  example: '2023-09-26'
                 end_date:
                   type: string
+                  example: '2023-09-28'
                 inclusions[0]:
                   type: string
                   example: inclusion1
@@ -943,7 +943,7 @@ paths:
                   example: '20'
                 room_id[]:
                   type: integer
-                  example: '11'
+                  example: '2'
                 amenity_id[]:
                   type: integer
                   example: '2'
@@ -3816,12 +3816,12 @@ paths:
           in: query
           schema:
             type: string
-          example: '2023-09-30'
+          example: '2023-09-21'
         - name: check_out
           in: query
           schema:
             type: string
-          example: '2023-09-30'
+          example: '2023-09-22'
       responses:
         '200':
           description: Successful response
@@ -3852,17 +3852,16 @@ paths:
           in: query
           schema:
             type: string
-          example: Sir
         - name: check_in
           in: query
           schema:
             type: string
-          example: '2023-09-30'
+          example: '2023-09-21'
         - name: check_out
           in: query
           schema:
             type: string
-          example: '2023-09-30'
+          example: '2023-09-22'
       responses:
         '200':
           description: Successful response
@@ -3880,10 +3879,10 @@ paths:
               properties:
                 check_in:
                   type: string
-                  example: '2023-09-30'
+                  example: '2023-09-21'
                 check_out:
                   type: string
-                  example: '2023-09-30'
+                  example: '2023-09-22'
                 name:
                   type: string
                   example: Sirjeet Tamrakaar
@@ -3896,21 +3895,15 @@ paths:
                 address:
                   type: string
                   example: kapur
-                no_of_adult:
-                  type: integer
-                  example: '2'
-                no_of_child:
-                  type: integer
-                  example: '1'
                 room_id[]:
                   type: integer
                   example: '12'
                 amount:
                   type: integer
-                  example: '100'
+                  example: '200'
                 discount:
                   type: integer
-                  example: '10'
+                  example: '20'
                 gender:
                   type: string
                   example: male
@@ -3942,6 +3935,12 @@ paths:
                 id_card[1][image]:
                   type: string
                   format: binary
+                no_of_adult:
+                  type: integer
+                  example: '2'
+                no_of_child:
+                  type: integer
+                  example: '1'
       security:
         - bearerAuth: []
       parameters:
@@ -3973,7 +3972,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '10015'
+          example: '10000'
       responses:
         '200':
           description: Successful response
@@ -4045,41 +4044,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '10010'
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /admin/booking/{id}/payment-store:
-    post:
-      tags:
-        - admin > Booking
-      summary: payment store
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                paid_amount:
-                  type: integer
-                  example: '10'
-                payment_method:
-                  type: string
-                  example: fonepay1
-                invoice_no:
-                  type: integer
-                  example: '10100'
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: id
-          in: path
-          schema:
-            type: integer
-          required: true
-          example: '10011'
+          example: '10000'
       responses:
         '200':
           description: Successful response
@@ -4101,6 +4066,40 @@ paths:
             type: integer
           required: true
           example: '10015'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/booking/{id}/payment-store:
+    post:
+      tags:
+        - admin > Booking
+      summary: payment store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                paid_amount:
+                  type: integer
+                  example: '50'
+                payment_method:
+                  type: string
+                  example: fonepay1
+                invoice_no:
+                  type: integer
+                  example: '10100'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '10000'
       responses:
         '200':
           description: Successful response
@@ -4131,7 +4130,65 @@ paths:
           in: query
           schema:
             type: string
-          example: Bikash
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/additional-bill:
+    get:
+      tags:
+        - admin > booking-additional-bills
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - admin > booking-additional-bills
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                booking_id:
+                  type: integer
+                  example: '10000'
+                title:
+                  type: string
+                  example: view
+                price:
+                  type: integer
+                  example: '100'
+                status:
+                  type: string
+                  example: active
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: Successful response
@@ -4275,12 +4332,12 @@ paths:
           in: query
           schema:
             type: string
-          example: '2023-10-30'
+          example: '2023-11-30'
         - name: check_out
           in: query
           schema:
             type: string
-          example: '2023-10-30'
+          example: '2023-11-30'
         - name: rooms_count
           in: query
           schema:
@@ -4304,10 +4361,10 @@ paths:
               properties:
                 check_in:
                   type: string
-                  example: '2023-10-30'
+                  example: '2023-09-19'
                 check_out:
                   type: string
-                  example: '2023-10-31'
+                  example: '2023-09-19'
                 name:
                   type: string
                   example: Sirjeet Tamrakaar
@@ -4353,13 +4410,13 @@ paths:
                   format: binary
                 no_of_adult:
                   type: integer
-                  example: '2'
+                  example: '4'
                 no_of_child:
                   type: integer
-                  example: '0'
+                  example: '2'
                 room_type_id:
                   type: integer
-                  example: '16'
+                  example: '4'
                 rooms_count:
                   type: integer
                   example: '2'

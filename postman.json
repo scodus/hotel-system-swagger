@@ -923,7 +923,7 @@
 									"formdata": [
 										{
 											"key": "title",
-											"value": "amenity title2",
+											"value": "amenity title3",
 											"type": "text"
 										},
 										{
@@ -939,7 +939,7 @@
 										{
 											"key": "icon",
 											"type": "file",
-											"src": "/C:/Users/August/Downloads/Compressed/test-images/angry cat.jpg"
+											"src": "/C:/Users/August/Downloads/call.png"
 										}
 									]
 								},
@@ -1203,7 +1203,7 @@
 									"formdata": [
 										{
 											"key": "title",
-											"value": "title 100",
+											"value": "500",
 											"type": "text"
 										},
 										{
@@ -1264,7 +1264,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"title\": [\r\n        \"10s\",\r\n        \"2s\"\r\n    ]\r\n}",
+									"raw": "{\r\n    \"title\": [\r\n        105,\r\n        106\r\n    ]\r\n    // \"title\" : [\"2\", 2]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1325,7 +1325,7 @@
 										},
 										{
 											"key": "room_type_id",
-											"value": "31",
+											"value": "5",
 											"type": "text"
 										},
 										{
@@ -1348,7 +1348,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "11"
+											"value": "2"
 										}
 									]
 								}
@@ -1599,27 +1599,27 @@
 									"formdata": [
 										{
 											"key": "title",
-											"value": "title 2000",
+											"value": "Premium",
 											"type": "text"
 										},
 										{
 											"key": "description",
-											"value": "2",
+											"value": "2sp",
 											"type": "text"
 										},
 										{
 											"key": "max_occupancy",
-											"value": "06",
+											"value": "15",
 											"type": "text"
 										},
 										{
 											"key": "no_of_adult",
-											"value": "04",
+											"value": "10",
 											"type": "text"
 										},
 										{
 											"key": "no_of_child",
-											"value": "02",
+											"value": "05",
 											"type": "text"
 										},
 										{
@@ -1634,24 +1634,18 @@
 											"disabled": true
 										},
 										{
-											"key": "discount_percent",
-											"value": "10",
-											"type": "text",
-											"disabled": true
-										},
-										{
 											"key": "tax_status",
 											"value": "0",
 											"type": "text"
 										},
 										{
 											"key": "start_date",
-											"value": "",
+											"value": "2023-09-26",
 											"type": "text"
 										},
 										{
 											"key": "end_date",
-											"value": "",
+											"value": "2023-09-28",
 											"type": "text"
 										},
 										{
@@ -1696,12 +1690,12 @@
 										},
 										{
 											"key": "room_id[]",
-											"value": "22",
+											"value": "7",
 											"type": "text"
 										},
 										{
 											"key": "room_id[]",
-											"value": "11",
+											"value": "2",
 											"type": "text",
 											"disabled": true
 										},
@@ -4645,7 +4639,7 @@
 										{
 											"key": "welcome_message_headperson_signature",
 											"type": "file",
-											"src": "/C:/Users/August/Downloads/QRDown.png"
+											"src": "/C:/Users/August/Downloads/2.jpeg"
 										}
 									]
 								},
@@ -7408,7 +7402,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/admin/booking/search/available-rooms?paginate=1&page=&limit=&search_keyword=&check_in=2023-09-30&check_out=2023-09-30",
+									"raw": "{{url}}/admin/booking/search/available-rooms?paginate=1&page=&limit=&search_keyword=&check_in=2023-09-21&check_out=2023-09-22",
 									"host": [
 										"{{url}}"
 									],
@@ -7437,11 +7431,11 @@
 										},
 										{
 											"key": "check_in",
-											"value": "2023-09-30"
+											"value": "2023-09-21"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-09-30"
+											"value": "2023-09-22"
 										}
 									]
 								}
@@ -7476,7 +7470,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/admin/booking?paginate=1&page=&limit=&search_keyword=Sir&check_in=2023-09-30&check_out=2023-09-30",
+									"raw": "{{url}}/admin/booking?paginate=1&page=&limit=&search_keyword=&check_in=2023-09-21&check_out=2023-09-22",
 									"host": [
 										"{{url}}"
 									],
@@ -7499,15 +7493,15 @@
 										},
 										{
 											"key": "search_keyword",
-											"value": "Sir"
+											"value": ""
 										},
 										{
 											"key": "check_in",
-											"value": "2023-09-30"
+											"value": "2023-09-21"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-09-30"
+											"value": "2023-09-22"
 										}
 									]
 								}
@@ -7555,7 +7549,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "10015"
+											"value": "10000"
 										}
 									]
 								}
@@ -7588,12 +7582,12 @@
 									"formdata": [
 										{
 											"key": "check_in",
-											"value": "2023-09-30",
+											"value": "2023-09-21",
 											"type": "text"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-09-30",
+											"value": "2023-09-22",
 											"type": "text"
 										},
 										{
@@ -7617,20 +7611,8 @@
 											"type": "text"
 										},
 										{
-											"key": "no_of_adult",
-											"value": "1",
-											"type": "text",
-											"disabled": true
-										},
-										{
-											"key": "no_of_child",
-											"value": "1",
-											"type": "text",
-											"disabled": true
-										},
-										{
 											"key": "room_id[]",
-											"value": "15",
+											"value": "1",
 											"type": "text"
 										},
 										{
@@ -7641,12 +7623,12 @@
 										},
 										{
 											"key": "amount",
-											"value": "100",
+											"value": "200",
 											"type": "text"
 										},
 										{
 											"key": "discount",
-											"value": "10",
+											"value": "20",
 											"type": "text"
 										},
 										{
@@ -7721,6 +7703,57 @@
 							"response": []
 						},
 						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text"
+										},
+										{
+											"key": "paid",
+											"value": "90",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/booking/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"booking",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "10011"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "status cancelled",
 							"request": {
 								"auth": {
@@ -7785,114 +7818,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "10010"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "payment store",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "paid_amount",
-											"value": "10",
-											"type": "text"
-										},
-										{
-											"key": "payment_method",
-											"value": "fonepay1",
-											"type": "text"
-										},
-										{
-											"key": "invoice_no",
-											"value": "10100",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/admin/booking/:id/payment-store",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"booking",
-										":id",
-										"payment-store"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "10011"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "update",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "_method",
-											"value": "patch",
-											"type": "text"
-										},
-										{
-											"key": "paid",
-											"value": "90",
-											"type": "text",
-											"disabled": true
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/admin/booking/:id",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"booking",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "10011"
+											"value": "10000"
 										}
 									]
 								}
@@ -7934,6 +7860,63 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "payment store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "paid_amount",
+											"value": "50",
+											"type": "text"
+										},
+										{
+											"key": "payment_method",
+											"value": "fonepay1",
+											"type": "text"
+										},
+										{
+											"key": "invoice_no",
+											"value": "10100",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/booking/:id/payment-store",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"booking",
+										":id",
+										"payment-store"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "10000"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},
@@ -7968,7 +7951,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/admin/payment?paginate=1&page=&limit=&search_keyword=Bikash",
+									"raw": "{{url}}/admin/payment?paginate=1&page=&limit=&search_keyword=",
 									"host": [
 										"{{url}}"
 									],
@@ -7991,8 +7974,124 @@
 										},
 										{
 											"key": "search_keyword",
-											"value": "Bikash"
+											"value": ""
 										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "booking-additional-bills",
+					"item": [
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/additional-bill?paginate=1&page=&limit=&search_keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"additional-bill"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "booking_id",
+											"value": "10000",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "view",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "100",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "active",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/additional-bill",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"additional-bill"
 									]
 								}
 							},
@@ -8222,7 +8321,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/booking/search/available-room-types?paginate=1&page=&limit=&search_keyword=&check_in=2023-10-30&check_out=2023-10-30&rooms_count=2",
+									"raw": "{{url}}/booking/search/available-room-types?paginate=1&page=&limit=&search_keyword=&check_in=2023-11-30&check_out=2023-11-30&rooms_count=2",
 									"host": [
 										"{{url}}"
 									],
@@ -8250,11 +8349,11 @@
 										},
 										{
 											"key": "check_in",
-											"value": "2023-10-30"
+											"value": "2023-11-30"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-10-30"
+											"value": "2023-11-30"
 										},
 										{
 											"key": "rooms_count",
@@ -8291,12 +8390,12 @@
 									"formdata": [
 										{
 											"key": "check_in",
-											"value": "2023-10-30",
+											"value": "2023-09-19",
 											"type": "text"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-10-31",
+											"value": "2023-09-19",
 											"type": "text"
 										},
 										{
@@ -8367,17 +8466,17 @@
 										},
 										{
 											"key": "no_of_adult",
-											"value": "2",
+											"value": "4",
 											"type": "text"
 										},
 										{
 											"key": "no_of_child",
-											"value": "0",
+											"value": "2",
 											"type": "text"
 										},
 										{
 											"key": "room_type_id",
-											"value": "16",
+											"value": "4",
 											"type": "text"
 										},
 										{
