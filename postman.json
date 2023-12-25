@@ -851,7 +851,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/admin/booking/search/available-rooms?paginate=1&page=&limit=&search_keyword=&check_in=2023-12-20&check_out=2023-12-21",
+									"raw": "{{url}}/admin/booking/search/available-rooms?paginate=1&page=&limit=&search_keyword=&check_in=2023-12-26&check_out=2023-12-27",
 									"host": [
 										"{{url}}"
 									],
@@ -880,11 +880,11 @@
 										},
 										{
 											"key": "check_in",
-											"value": "2023-12-20"
+											"value": "2023-12-26"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-12-21"
+											"value": "2023-12-27"
 										}
 									]
 								}
@@ -1031,17 +1031,17 @@
 									"formdata": [
 										{
 											"key": "check_in",
-											"value": "2023-12-20",
+											"value": "2023-12-25",
 											"type": "text"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-12-21",
+											"value": "2023-12-26",
 											"type": "text"
 										},
 										{
 											"key": "name",
-											"value": "A Bahadur B",
+											"value": "A Bahadur B 1",
 											"type": "text"
 										},
 										{
@@ -1234,6 +1234,57 @@
 										{
 											"key": "id",
 											"value": "10003"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update checkout date",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "put",
+											"type": "text"
+										},
+										{
+											"key": "check_out",
+											"value": "2023-12-28",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/booking/:id/update-date",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"booking",
+										":id",
+										"update-date"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "10004"
 										}
 									]
 								}

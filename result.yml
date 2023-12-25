@@ -522,12 +522,12 @@ paths:
           in: query
           schema:
             type: string
-          example: '2023-12-20'
+          example: '2023-12-26'
         - name: check_out
           in: query
           schema:
             type: string
-          example: '2023-12-21'
+          example: '2023-12-27'
       responses:
         '200':
           description: Successful response
@@ -585,13 +585,13 @@ paths:
               properties:
                 check_in:
                   type: string
-                  example: '2023-12-20'
+                  example: '2023-12-25'
                 check_out:
                   type: string
-                  example: '2023-12-21'
+                  example: '2023-12-26'
                 name:
                   type: string
-                  example: A Bahadur B
+                  example: A Bahadur B 1
                 email:
                   type: string
                   example: a@b.com
@@ -733,6 +733,37 @@ paths:
             type: integer
           required: true
           example: '10003'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/booking/{id}/update-date:
+    post:
+      tags:
+        - admin > Booking
+      summary: update checkout date
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: put
+                check_out:
+                  type: string
+                  example: '2023-12-28'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '10004'
       responses:
         '200':
           description: Successful response
