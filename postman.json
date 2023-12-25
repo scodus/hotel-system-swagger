@@ -851,7 +851,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/admin/booking/search/available-rooms?paginate=1&page=&limit=&search_keyword=&check_in=2023-12-26&check_out=2023-12-27",
+									"raw": "{{url}}/admin/booking/search/available-rooms?paginate=1&page=&limit=&search_keyword=&check_in=2023-12-29&check_out=2023-12-29",
 									"host": [
 										"{{url}}"
 									],
@@ -880,11 +880,11 @@
 										},
 										{
 											"key": "check_in",
-											"value": "2023-12-26"
+											"value": "2023-12-29"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-12-27"
+											"value": "2023-12-29"
 										}
 									]
 								}
@@ -998,7 +998,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "10000"
+											"value": "10004"
 										}
 									]
 								}
@@ -1031,12 +1031,12 @@
 									"formdata": [
 										{
 											"key": "check_in",
-											"value": "2023-12-25",
+											"value": "2023-12-31",
 											"type": "text"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-12-26",
+											"value": "2023-12-31",
 											"type": "text"
 										},
 										{
@@ -1071,7 +1071,7 @@
 										},
 										{
 											"key": "amount",
-											"value": "6000",
+											"value": "3000",
 											"type": "text"
 										},
 										{
@@ -1241,7 +1241,7 @@
 							"response": []
 						},
 						{
-							"name": "update checkout date",
+							"name": "update date",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1265,7 +1265,7 @@
 										},
 										{
 											"key": "check_out",
-											"value": "2023-12-28",
+											"value": "2023-12-27",
 											"type": "text"
 										}
 									]
@@ -1280,6 +1280,77 @@
 										"booking",
 										":id",
 										"update-date"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "10005"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "transfer",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "put",
+											"type": "text"
+										},
+										{
+											"key": "check_out",
+											"value": "2023-12-30",
+											"type": "text"
+										},
+										{
+											"key": "amount",
+											"value": "3000",
+											"type": "text"
+										},
+										{
+											"key": "discount",
+											"value": "200",
+											"type": "text"
+										},
+										{
+											"key": "room_id[]",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "room_id[]",
+											"value": "2",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/booking/:id/transfer",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"booking",
+										":id",
+										"transfer"
 									],
 									"variable": [
 										{
@@ -1459,7 +1530,70 @@
 					]
 				},
 				{
-					"name": "booking-additional-bills",
+					"name": "(Booking)Payment",
+					"item": [
+						{
+							"name": "list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/admin/payment?paginate=1&page=&limit=&search_keyword=",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"payment"
+									],
+									"query": [
+										{
+											"key": "paginate",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": ""
+										},
+										{
+											"key": "limit",
+											"value": ""
+										},
+										{
+											"key": "search_keyword",
+											"value": ""
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "(Booking) Additional Bill",
 					"item": [
 						{
 							"name": "list",
@@ -4778,69 +4912,6 @@
 										{
 											"key": "id",
 											"value": "1"
-										}
-									]
-								}
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Payment",
-					"item": [
-						{
-							"name": "list",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{url}}/admin/payment?paginate=1&page=&limit=&search_keyword=",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"payment"
-									],
-									"query": [
-										{
-											"key": "paginate",
-											"value": "1"
-										},
-										{
-											"key": "page",
-											"value": ""
-										},
-										{
-											"key": "limit",
-											"value": ""
-										},
-										{
-											"key": "search_keyword",
-											"value": ""
 										}
 									]
 								}

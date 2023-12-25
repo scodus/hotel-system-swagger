@@ -28,7 +28,8 @@ tags:
   - name: admin > amenity
   - name: admin > banner
   - name: admin > Booking
-  - name: admin > booking-additional-bills
+  - name: admin > (Booking)Payment
+  - name: admin > (Booking) Additional Bill
   - name: admin > cleaning-check-list
   - name: admin > cleaning-assign
   - name: admin > Contact Enquiry
@@ -41,7 +42,6 @@ tags:
   - name: admin > Manual Enquiry
   - name: admin > Offer
   - name: admin > Package Enquiry
-  - name: admin > Payment
   - name: admin > Position
   - name: admin > Roster-task
   - name: admin > Roster-time
@@ -522,12 +522,12 @@ paths:
           in: query
           schema:
             type: string
-          example: '2023-12-26'
+          example: '2023-12-29'
         - name: check_out
           in: query
           schema:
             type: string
-          example: '2023-12-27'
+          example: '2023-12-29'
       responses:
         '200':
           description: Successful response
@@ -585,10 +585,10 @@ paths:
               properties:
                 check_in:
                   type: string
-                  example: '2023-12-25'
+                  example: '2023-12-31'
                 check_out:
                   type: string
-                  example: '2023-12-26'
+                  example: '2023-12-31'
                 name:
                   type: string
                   example: A Bahadur B 1
@@ -606,7 +606,7 @@ paths:
                   example: '2'
                 amount:
                   type: integer
-                  example: '6000'
+                  example: '3000'
                 discount:
                   type: integer
                   example: '200'
@@ -678,7 +678,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '10000'
+          example: '10004'
       responses:
         '200':
           description: Successful response
@@ -742,7 +742,7 @@ paths:
     post:
       tags:
         - admin > Booking
-      summary: update checkout date
+      summary: update date
       requestBody:
         content:
           multipart/form-data:
@@ -754,7 +754,47 @@ paths:
                   example: put
                 check_out:
                   type: string
-                  example: '2023-12-28'
+                  example: '2023-12-27'
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '10005'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/booking/{id}/transfer:
+    post:
+      tags:
+        - admin > Booking
+      summary: transfer
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: put
+                check_out:
+                  type: string
+                  example: '2023-12-30'
+                amount:
+                  type: integer
+                  example: '3000'
+                discount:
+                  type: integer
+                  example: '200'
+                room_id[]:
+                  type: integer
+                  example: '2'
       security:
         - bearerAuth: []
       parameters:
@@ -866,10 +906,40 @@ paths:
           description: Successful response
           content:
             application/json: {}
+  /admin/payment:
+    get:
+      tags:
+        - admin > (Booking)Payment
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
   /admin/additional-bill:
     get:
       tags:
-        - admin > booking-additional-bills
+        - admin > (Booking) Additional Bill
       summary: list
       security:
         - bearerAuth: []
@@ -898,7 +968,7 @@ paths:
             application/json: {}
     post:
       tags:
-        - admin > booking-additional-bills
+        - admin > (Booking) Additional Bill
       summary: store
       requestBody:
         content:
@@ -2603,36 +2673,6 @@ paths:
           schema:
             type: string
           example: application/json
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-  /admin/payment:
-    get:
-      tags:
-        - admin > Payment
-      summary: list
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: paginate
-          in: query
-          schema:
-            type: integer
-          example: '1'
-        - name: page
-          in: query
-          schema:
-            type: string
-        - name: limit
-          in: query
-          schema:
-            type: string
-        - name: search_keyword
-          in: query
-          schema:
-            type: string
       responses:
         '200':
           description: Successful response
