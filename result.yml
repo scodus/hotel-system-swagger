@@ -28,8 +28,8 @@ tags:
   - name: admin > amenity
   - name: admin > banner
   - name: admin > Booking
-  - name: admin > (Booking)Payment
-  - name: admin > (Booking) Additional Bill
+  - name: admin > (booking)Payment
+  - name: admin > (booking) Additional Bill
   - name: admin > cleaning-check-list
   - name: admin > cleaning-assign
   - name: admin > Contact Enquiry
@@ -522,12 +522,12 @@ paths:
           in: query
           schema:
             type: string
-          example: '2023-12-29'
+          example: '2024-01-17'
         - name: check_out
           in: query
           schema:
             type: string
-          example: '2023-12-29'
+          example: '2024-01-18'
       responses:
         '200':
           description: Successful response
@@ -562,12 +562,12 @@ paths:
           in: query
           schema:
             type: string
-          example: '2023-12-01'
+          example: '2024-01-10'
         - name: check_out
           in: query
           schema:
             type: string
-          example: '2023-12-31'
+          example: '2024-11-11'
       responses:
         '200':
           description: Successful response
@@ -585,13 +585,13 @@ paths:
               properties:
                 check_in:
                   type: string
-                  example: '2023-12-31'
+                  example: '2024-01-22'
                 check_out:
                   type: string
-                  example: '2023-12-31'
+                  example: '2024-01-24'
                 name:
                   type: string
-                  example: A Bahadur B 1
+                  example: A Bahadur B 2
                 email:
                   type: string
                   example: a@b.com
@@ -603,13 +603,13 @@ paths:
                   example: ktm
                 room_id[]:
                   type: integer
-                  example: '2'
+                  example: '4'
                 amount:
                   type: integer
-                  example: '3000'
+                  example: '6000'
                 discount:
                   type: integer
-                  example: '200'
+                  example: '400'
                 gender:
                   type: string
                   example: male
@@ -754,7 +754,7 @@ paths:
                   example: put
                 check_out:
                   type: string
-                  example: '2023-12-27'
+                  example: '2024-01-24'
       security:
         - bearerAuth: []
       parameters:
@@ -763,7 +763,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '10005'
+          example: '10020'
       responses:
         '200':
           description: Successful response
@@ -785,13 +785,13 @@ paths:
                   example: put
                 check_out:
                   type: string
-                  example: '2023-12-30'
+                  example: '2024-01-24'
                 amount:
                   type: integer
-                  example: '3000'
+                  example: '6000'
                 discount:
                   type: integer
-                  example: '200'
+                  example: '400'
                 room_id[]:
                   type: integer
                   example: '2'
@@ -803,7 +803,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '10004'
+          example: '10017'
       responses:
         '200':
           description: Successful response
@@ -909,7 +909,7 @@ paths:
   /admin/payment:
     get:
       tags:
-        - admin > (Booking)Payment
+        - admin > (booking)Payment
       summary: list
       security:
         - bearerAuth: []
@@ -931,6 +931,16 @@ paths:
           in: query
           schema:
             type: string
+        - name: from_date
+          in: query
+          schema:
+            type: string
+          example: '2024-01-01'
+        - name: to_date
+          in: query
+          schema:
+            type: string
+          example: '2024-01-30'
       responses:
         '200':
           description: Successful response
@@ -939,7 +949,7 @@ paths:
   /admin/additional-bill:
     get:
       tags:
-        - admin > (Booking) Additional Bill
+        - admin > (booking) Additional Bill
       summary: list
       security:
         - bearerAuth: []
@@ -968,7 +978,7 @@ paths:
             application/json: {}
     post:
       tags:
-        - admin > (Booking) Additional Bill
+        - admin > (booking) Additional Bill
       summary: store
       requestBody:
         content:
@@ -2527,11 +2537,29 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /admin/package-enquiry/{id}:
-    delete:
+  /admin/package-enquiry:
+    post:
       tags:
         - admin > Package Enquiry
-      summary: delete
+      summary: store
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: name1
+                email:
+                  type: string
+                  example: a@b.com
+                package:
+                  type: string
+                  example: sdfghngdfgdfgdfg  dgfg
+                description:
+                  type: string
+                  example: sadf  dfsa  sdfa dfsa  sfda sd
       security:
         - bearerAuth: []
       parameters:
@@ -2540,12 +2568,6 @@ paths:
           schema:
             type: string
           example: application/json
-        - name: id
-          in: path
-          schema:
-            type: integer
-          required: true
-          example: '1'
       responses:
         '200':
           description: Successful response
@@ -2554,7 +2576,37 @@ paths:
     get:
       tags:
         - admin > Package Enquiry
-      summary: show
+      summary: list
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: page
+          in: query
+          schema:
+            type: string
+        - name: limit
+          in: query
+          schema:
+            type: string
+        - name: search_keyword
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /admin/package-enquiry/{id}:
+    delete:
+      tags:
+        - admin > Package Enquiry
+      summary: delete
       security:
         - bearerAuth: []
       parameters:
@@ -2613,58 +2665,10 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /admin/package-enquiry:
     get:
       tags:
         - admin > Package Enquiry
-      summary: list
-      security:
-        - bearerAuth: []
-      parameters:
-        - name: paginate
-          in: query
-          schema:
-            type: integer
-          example: '1'
-        - name: page
-          in: query
-          schema:
-            type: string
-        - name: limit
-          in: query
-          schema:
-            type: string
-        - name: search_keyword
-          in: query
-          schema:
-            type: string
-      responses:
-        '200':
-          description: Successful response
-          content:
-            application/json: {}
-    post:
-      tags:
-        - admin > Package Enquiry
-      summary: store
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                name:
-                  type: string
-                  example: name1
-                email:
-                  type: string
-                  example: a@b.com
-                package:
-                  type: string
-                  example: sdfghngdfgdfgdfg  dgfg
-                description:
-                  type: string
-                  example: sadf  dfsa  sdfa dfsa  sfda sd
+      summary: show
       security:
         - bearerAuth: []
       parameters:
@@ -2673,6 +2677,12 @@ paths:
           schema:
             type: string
           example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+          required: true
+          example: '1'
       responses:
         '200':
           description: Successful response
@@ -3533,7 +3543,7 @@ paths:
           schema:
             type: integer
           required: true
-          example: '9'
+          example: '1'
       responses:
         '200':
           description: Successful response
@@ -3868,7 +3878,7 @@ paths:
     get:
       tags:
         - admin > Site Setting
-      summary: welcome message section Copy
+      summary: welcome message section
       security:
         - bearerAuth: []
       responses:
@@ -4395,12 +4405,12 @@ paths:
           in: query
           schema:
             type: string
-          example: '2023-11-30'
+          example: '2024-01-10'
         - name: check_out
           in: query
           schema:
             type: string
-          example: '2023-11-30'
+          example: '2024-01-11'
         - name: rooms_count
           in: query
           schema:

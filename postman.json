@@ -851,7 +851,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/admin/booking/search/available-rooms?paginate=1&page=&limit=&search_keyword=&check_in=2023-12-29&check_out=2023-12-29",
+									"raw": "{{url}}/admin/booking/search/available-rooms?paginate=1&page=&limit=&search_keyword=&check_in=2024-01-17&check_out=2024-01-18",
 									"host": [
 										"{{url}}"
 									],
@@ -880,11 +880,11 @@
 										},
 										{
 											"key": "check_in",
-											"value": "2023-12-29"
+											"value": "2024-01-17"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-12-29"
+											"value": "2024-01-18"
 										}
 									]
 								}
@@ -919,7 +919,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/admin/booking?paginate=1&page=&limit=&search_keyword=&check_in=2023-12-01&check_out=2023-12-31",
+									"raw": "{{url}}/admin/booking?paginate=1&page=&limit=&search_keyword=&check_in=2024-01-10&check_out=2024-11-11",
 									"host": [
 										"{{url}}"
 									],
@@ -946,11 +946,11 @@
 										},
 										{
 											"key": "check_in",
-											"value": "2023-12-01"
+											"value": "2024-01-10"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-12-31"
+											"value": "2024-11-11"
 										}
 									]
 								}
@@ -1031,17 +1031,17 @@
 									"formdata": [
 										{
 											"key": "check_in",
-											"value": "2023-12-31",
+											"value": "2024-01-22",
 											"type": "text"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-12-31",
+											"value": "2024-01-24",
 											"type": "text"
 										},
 										{
 											"key": "name",
-											"value": "A Bahadur B 1",
+											"value": "A Bahadur B 2",
 											"type": "text"
 										},
 										{
@@ -1061,22 +1061,22 @@
 										},
 										{
 											"key": "room_id[]",
-											"value": "1",
+											"value": "3",
 											"type": "text"
 										},
 										{
 											"key": "room_id[]",
-											"value": "2",
+											"value": "4",
 											"type": "text"
 										},
 										{
 											"key": "amount",
-											"value": "3000",
+											"value": "6000",
 											"type": "text"
 										},
 										{
 											"key": "discount",
-											"value": "200",
+											"value": "400",
 											"type": "text"
 										},
 										{
@@ -1265,7 +1265,7 @@
 										},
 										{
 											"key": "check_out",
-											"value": "2023-12-27",
+											"value": "2024-01-24",
 											"type": "text"
 										}
 									]
@@ -1284,7 +1284,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "10005"
+											"value": "10020"
 										}
 									]
 								}
@@ -1316,17 +1316,17 @@
 										},
 										{
 											"key": "check_out",
-											"value": "2023-12-30",
+											"value": "2024-01-24",
 											"type": "text"
 										},
 										{
 											"key": "amount",
-											"value": "3000",
+											"value": "6000",
 											"type": "text"
 										},
 										{
 											"key": "discount",
-											"value": "200",
+											"value": "400",
 											"type": "text"
 										},
 										{
@@ -1355,7 +1355,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "10004"
+											"value": "10017"
 										}
 									]
 								}
@@ -1530,7 +1530,7 @@
 					]
 				},
 				{
-					"name": "(Booking)Payment",
+					"name": "(booking)Payment",
 					"item": [
 						{
 							"name": "list",
@@ -1560,7 +1560,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/admin/payment?paginate=1&page=&limit=&search_keyword=",
+									"raw": "{{url}}/admin/payment?paginate=1&page=&limit=&search_keyword=&from_date=2024-01-01&to_date=2024-01-30",
 									"host": [
 										"{{url}}"
 									],
@@ -1584,6 +1584,14 @@
 										{
 											"key": "search_keyword",
 											"value": ""
+										},
+										{
+											"key": "from_date",
+											"value": "2024-01-01"
+										},
+										{
+											"key": "to_date",
+											"value": "2024-01-30"
 										}
 									]
 								}
@@ -1593,7 +1601,7 @@
 					]
 				},
 				{
-					"name": "(Booking) Additional Bill",
+					"name": "(booking) Additional Bill",
 					"item": [
 						{
 							"name": "list",
@@ -4644,6 +4652,65 @@
 					"name": "Package Enquiry",
 					"item": [
 						{
+							"name": "store",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "name1",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "a@b.com",
+											"type": "text"
+										},
+										{
+											"key": "package",
+											"value": "sdfghngdfgdfgdfg  dgfg",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "sadf  dfsa  sdfa dfsa  sfda sd",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/admin/package-enquiry",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"package-enquiry"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "delete",
 							"request": {
 								"auth": {
@@ -4667,6 +4734,71 @@
 								"body": {
 									"mode": "formdata",
 									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/admin/package-enquiry/:id",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"admin",
+										"package-enquiry",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{admin_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "patch",
+											"type": "text"
+										},
+										{
+											"key": "name",
+											"value": "name1",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "a@b.com",
+											"type": "text"
+										},
+										{
+											"key": "package",
+											"value": "sdfghngdfgdfgdfg  dgfg",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "sadf  dfsa  sdfa dfsa  sfda sd",
+											"type": "text"
+										}
+									]
 								},
 								"url": {
 									"raw": "{{url}}/admin/package-enquiry/:id",
@@ -4773,130 +4905,6 @@
 								"body": {
 									"mode": "formdata",
 									"formdata": []
-								},
-								"url": {
-									"raw": "{{url}}/admin/package-enquiry/:id",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"package-enquiry",
-										":id"
-									],
-									"variable": [
-										{
-											"key": "id",
-											"value": "1"
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "store",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Accept",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "name",
-											"value": "name1",
-											"type": "text"
-										},
-										{
-											"key": "email",
-											"value": "a@b.com",
-											"type": "text"
-										},
-										{
-											"key": "package",
-											"value": "sdfghngdfgdfgdfg  dgfg",
-											"type": "text"
-										},
-										{
-											"key": "description",
-											"value": "sadf  dfsa  sdfa dfsa  sfda sd",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/admin/package-enquiry",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"admin",
-										"package-enquiry"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "update",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{admin_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "_method",
-											"value": "patch",
-											"type": "text"
-										},
-										{
-											"key": "name",
-											"value": "name1",
-											"type": "text"
-										},
-										{
-											"key": "email",
-											"value": "a@b.com",
-											"type": "text"
-										},
-										{
-											"key": "package",
-											"value": "sdfghngdfgdfgdfg  dgfg",
-											"type": "text"
-										},
-										{
-											"key": "description",
-											"value": "sadf  dfsa  sdfa dfsa  sfda sd",
-											"type": "text"
-										}
-									]
 								},
 								"url": {
 									"raw": "{{url}}/admin/package-enquiry/:id",
@@ -6575,7 +6583,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "9"
+											"value": "1"
 										}
 									]
 								}
@@ -7080,7 +7088,7 @@
 										{
 											"key": "logo",
 											"type": "file",
-											"src": "/C:/Users/August/Downloads/2.jpeg"
+											"src": "/media/bikash/Local Disk Medias/Backup of Bikash/PC docs BACKUP/EnV.png"
 										}
 									]
 								},
@@ -7133,7 +7141,7 @@
 										{
 											"key": "welcome_message_headperson_signature",
 											"type": "file",
-											"src": "/C:/Users/August/Downloads/2.jpeg"
+											"src": "/media/bikash/Local Disk Medias/Backup of Bikash/PC docs BACKUP/Pictures/meme/10979564_840805489313198_706681792_n.jpg"
 										}
 									]
 								},
@@ -7577,7 +7585,7 @@
 							"response": []
 						},
 						{
-							"name": "welcome message section Copy",
+							"name": "welcome message section",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -8449,7 +8457,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{url}}/booking/search/available-room-types?paginate=1&page=&limit=&search_keyword=&check_in=2023-11-30&check_out=2023-11-30&rooms_count=2",
+									"raw": "{{url}}/booking/search/available-room-types?paginate=1&page=&limit=&search_keyword=&check_in=2024-01-10&check_out=2024-01-11&rooms_count=2",
 									"host": [
 										"{{url}}"
 									],
@@ -8477,11 +8485,11 @@
 										},
 										{
 											"key": "check_in",
-											"value": "2023-11-30"
+											"value": "2024-01-10"
 										},
 										{
 											"key": "check_out",
-											"value": "2023-11-30"
+											"value": "2024-01-11"
 										},
 										{
 											"key": "rooms_count",
