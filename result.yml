@@ -1,19 +1,9 @@
 openapi: 3.0.0
 info:
-  title: Hotem Admin Swagger
-  description: Swagger
-  version: '1.0'
-  x-logo:
-    url: https://github.com/joolfe/logoBanner.png
-    backgroundColor: '#FFFFFF'
-    altText: logo
-  termsOfService: '#'
-  license:
-    name: MIT
-    url: https://es.wikipedia.org/wiki/Licencia_MIT
+  title: hotel system admin
+  version: 1.0.0
 servers:
-  - url: https://hotel.scodus.com/api
-    description: Base URL
+  - url: http://{{url}}
 components:
   securitySchemes:
     bearerAuth:
